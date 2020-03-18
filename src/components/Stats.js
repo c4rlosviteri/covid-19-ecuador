@@ -277,7 +277,7 @@ function Stats({ selectedIndex, setSelectedIndex }) {
         <LastUpdate>
           <span>Última actualización</span>
           <span>
-            <FaCalendarAlt aria-hidden="true" /> 2020-03-18 - 12:00{" "}
+            <FaCalendarAlt aria-hidden="true" /> 2020-03-18 - 17:20{" "}
             <FaClock aria-hidden="true" />
           </span>
         </LastUpdate>

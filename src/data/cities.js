@@ -4,18 +4,28 @@ const cities = [
     province: "Guayas",
     id: "guayaquil",
     latlng: [-2.2067, -79.8884],
-    active: 78,
-    confirmed: 78,
+    active: 88,
+    confirmed: 88,
     recovered: 0,
-    deaths: 0
+    deaths: 1
   },
   {
     city: "Samborondón",
     province: "Guayas",
     id: "samborondon",
     latlng: [-2.0908, -79.8779],
-    active: 23,
-    confirmed: 23,
+    active: 21,
+    confirmed: 21,
+    recovered: 0,
+    deaths: 0
+  },
+  {
+    city: "Quito",
+    province: "Pichincha",
+    id: "quito",
+    latlng: [-0.1893, -78.4813],
+    active: 12,
+    confirmed: 12,
     recovered: 0,
     deaths: 0
   },
@@ -26,16 +36,6 @@ const cities = [
     latlng: [-2.1701, -79.822],
     active: 9,
     confirmed: 9,
-    recovered: 0,
-    deaths: 0
-  },
-  {
-    city: "Quito",
-    province: "Pichincha",
-    id: "quito",
-    latlng: [-0.1893, -78.4813],
-    active: 8,
-    confirmed: 8,
     recovered: 0,
     deaths: 0
   },
@@ -90,6 +90,16 @@ const cities = [
     deaths: 0
   },
   {
+    city: "Empalme",
+    province: "Guayas",
+    id: "empalme",
+    latlng: [-1.0427, -79.6378],
+    active: 2,
+    confirmed: 2,
+    recovered: 0,
+    deaths: 0
+  },
+  {
     city: "Machala",
     province: "El Oro",
     id: "machala",
@@ -124,16 +134,6 @@ const cities = [
     province: "Morona Santiago",
     id: "gualaquiza",
     latlng: [-3.4029, -78.5782],
-    active: 1,
-    confirmed: 1,
-    recovered: 0,
-    deaths: 0
-  },
-  {
-    city: "Empalme",
-    province: "Guayas",
-    id: "empalme",
-    latlng: [-1.0427, -79.6378],
     active: 1,
     confirmed: 1,
     recovered: 0,
