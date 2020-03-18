@@ -1,14 +1,24 @@
 {
   "name": "covid-19-ecuador",
+  "author": {
+    "name": "Carlos Viteri",
+    "email": "c4rlosviteri@gmail.com",
+    "url": "https://c4rlosviteri.dev"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "leaflet": "^1.6.0",
+    "normalize.css": "^8.0.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0"
+    "react-google-charts": "^3.0.15",
+    "react-leaflet": "^2.6.3",
+    "react-scripts": "3.4.0",
+    "styled-components": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
