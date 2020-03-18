@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactGA from "react-ga";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 
 import Map from "./components/Map";
@@ -52,6 +53,9 @@ export const theme = {
   red: "#c02739",
   white: "#ffffff"
 };
+
+ReactGA.initialize("UA-115305699-2");
+ReactGA.pageview(window.location.href);
 
 function App() {
   const [selectedIndex, setSelectedIndex] = useState(-1);

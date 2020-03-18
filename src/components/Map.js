@@ -111,7 +111,7 @@ function Map({ selectedIndex }) {
     <LeafletMap
       center={[-1.539574, -78.23037]}
       maxZoom={10}
-      minZoom={7}
+      minZoom={5}
       zoom={7}
     >
       <TileLayer url="https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png" />
