@@ -4,8 +4,8 @@ const cities = [
     province: "Guayas",
     id: "guayaquil",
     latlng: [-2.2067, -79.8884],
-    active: 61,
-    confirmed: 61,
+    active: 78,
+    confirmed: 78,
     recovered: 0,
     deaths: 0
   },
@@ -14,8 +14,18 @@ const cities = [
     province: "Guayas",
     id: "samborondon",
     latlng: [-2.0908, -79.8779],
-    active: 10,
-    confirmed: 10,
+    active: 23,
+    confirmed: 23,
+    recovered: 0,
+    deaths: 0
+  },
+  {
+    city: "Durán",
+    province: "Guayas",
+    id: "duran",
+    latlng: [-2.1701, -79.822],
+    active: 9,
+    confirmed: 9,
     recovered: 0,
     deaths: 0
   },
@@ -40,6 +50,26 @@ const cities = [
     deaths: 2
   },
   {
+    city: "Daule",
+    province: "Guayas",
+    id: "daule",
+    latlng: [-1.8629, -79.978],
+    active: 7,
+    confirmed: 7,
+    recovered: 0,
+    deaths: 0
+  },
+  {
+    city: "Manta",
+    province: "Manabí",
+    id: "manta",
+    latlng: [-0.9703, -80.7042],
+    active: 7,
+    confirmed: 7,
+    recovered: 0,
+    deaths: 0
+  },
+  {
     city: "Cuenca",
     province: "Azuay",
     id: "cuenca",
@@ -50,32 +80,12 @@ const cities = [
     deaths: 0
   },
   {
-    city: "Daule",
-    province: "Guayas",
-    id: "daule",
-    latlng: [-1.8629, -79.978],
-    active: 4,
-    confirmed: 4,
-    recovered: 0,
-    deaths: 0
-  },
-  {
-    city: "Duran",
-    province: "Guayas",
-    id: "duran",
-    latlng: [-2.1701, -79.822],
-    active: 4,
-    confirmed: 4,
-    recovered: 0,
-    deaths: 0
-  },
-  {
-    city: "Salinas",
-    province: "Santa Elena",
-    id: "salinas",
-    latlng: [-2.219, -80.9551],
-    active: 3,
-    confirmed: 3,
+    city: "Guaranda",
+    province: "Bolivar",
+    id: "guaranda",
+    latlng: [-1.5908, -78.9990],
+    active: 2,
+    confirmed: 2,
     recovered: 0,
     deaths: 0
   },
@@ -84,6 +94,16 @@ const cities = [
     province: "El Oro",
     id: "machala",
     latlng: [-3.2596, -79.9581],
+    active: 1,
+    confirmed: 1,
+    recovered: 0,
+    deaths: 0
+  },
+  {
+    city: "Jipijapa",
+    province: "Manabí",
+    id: "jipijapa",
+    latlng: [-1.3507, -80.5830],
     active: 1,
     confirmed: 1,
     recovered: 0,
@@ -124,16 +144,6 @@ const cities = [
     province: "Guayas",
     id: "milagro",
     latlng: [-2.1373, -79.5918],
-    active: 1,
-    confirmed: 1,
-    recovered: 0,
-    deaths: 0
-  },
-  {
-    city: "Manta",
-    province: "Manabí",
-    id: "manta",
-    latlng: [-0.9703, -80.7042],
     active: 1,
     confirmed: 1,
     recovered: 0,

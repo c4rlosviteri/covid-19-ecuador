@@ -17,6 +17,7 @@
     "react-dom": "^16.13.0",
     "react-ga": "^2.7.0",
     "react-google-charts": "^3.0.15",
+    "react-icons": "^3.9.0",
     "react-leaflet": "^2.6.3",
     "react-scripts": "3.4.0",
     "styled-components": "^5.0.1"

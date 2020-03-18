@@ -7,7 +7,9 @@ import Stats from "./components/Stats";
 
 const GlobalStyle = createGlobalStyle`
   body {
-    font-family: 'Open Sans';
+    color: ${props => props.theme.gray};
+    font-family: 'Source Sans Pro';
+    overflow-y: hidden;
   }
 
   * {
@@ -16,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
 
   .leaflet-container {
     height: 100vh;
+    margin: 0 auto;
     width: 100%;
   }
 
@@ -51,11 +54,12 @@ export const theme = {
   lightGray: "#e0e0e0",
   orange: "#ffa34d",
   red: "#c02739",
+  shadow: "rgba(0, 0, 0, 0.3)",
   white: "#ffffff"
 };
 
 ReactGA.initialize("UA-115305699-2");
-ReactGA.pageview(window.location.href);
+ReactGA.pageview("/covid19ecuador");
 
 function App() {
   const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -64,7 +68,10 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Container>
-        <Stats selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
+        <Stats
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+        />
         <Map selectedIndex={selectedIndex} />
       </Container>
     </ThemeProvider>

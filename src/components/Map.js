@@ -18,7 +18,7 @@ const City = styled.h3`
 
 const Cases = styled.div`
   display: grid;
-  font-family: "Open Sans";
+  font-family: "Source Sans Pro";
   font-size: 1rem;
   gap: 0.25rem;
 `;
@@ -26,14 +26,14 @@ const Cases = styled.div`
 const Confirmed = styled.h4`
   color: ${props => props.theme.red};
   display: grid;
-  font-weight: 600;
+  font-weight: 700;
   grid-template-columns: auto max-content;
   gap: 1.5rem;
   margin: 0;
 
   strong {
-    color: ${props => props.theme.black};
-    font-weight: 600;
+    color: ${props => props.theme.gray};
+    font-weight: 700;
   }
 `;
 
@@ -46,7 +46,7 @@ const Recovered = styled(Confirmed)`
 `;
 
 const Deaths = styled(Confirmed)`
-  color: ${props => props.theme.gray};
+  color: ${props => props.theme.black};
 `;
 
 function PointMarker({ center, children, isSelected, radius }) {
@@ -94,7 +94,7 @@ function Map({ selectedIndex }) {
   const getRadius = useCallback(
     active => {
       const maxRadius = 30;
-      const minRadius = 8;
+      const minRadius = 5;
 
       if (active === maxActive) {
         return maxRadius;
@@ -108,13 +108,11 @@ function Map({ selectedIndex }) {
   );
 
   return (
-    <LeafletMap
-      center={[-1.539574, -78.23037]}
-      maxZoom={10}
-      minZoom={5}
-      zoom={7}
-    >
-      <TileLayer url="https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png" />
+    <LeafletMap center={[-1.5395, -78.23037]} zoom={7}>
+      <TileLayer
+        updateWhenZooming
+        url="//{s}.tile.osm.org/{z}/{x}/{y}.png"
+      />
       {cities.map(
         (
           { active, city, confirmed, deaths, id, latlng, province, recovered },
