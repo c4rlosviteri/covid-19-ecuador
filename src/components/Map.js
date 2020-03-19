@@ -78,7 +78,7 @@ function Map({ selectedIndex }) {
   const maxActive = useMemo(
     () =>
       cities
-        .map(({ confirmed }) => confirmed)
+        .map(({ active }) => active)
         .reduce((acc, current) => (acc > current ? acc : current)),
     []
   );
@@ -86,7 +86,7 @@ function Map({ selectedIndex }) {
   const minActive = useMemo(
     () =>
       cities
-        .map(({ confirmed }) => confirmed)
+        .map(({ active }) => active)
         .reduce((acc, current) => (acc < current ? acc : current)),
     []
   );

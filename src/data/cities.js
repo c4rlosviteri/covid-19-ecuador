@@ -4,8 +4,8 @@ const cities = [
     province: "Guayas",
     id: "guayaquil",
     latlng: [-2.2067, -79.8884],
-    active: 88,
-    confirmed: 88,
+    active: 110,
+    confirmed: 111,
     recovered: 0,
     deaths: 1
   },
@@ -16,6 +16,16 @@ const cities = [
     latlng: [-2.0908, -79.8779],
     active: 21,
     confirmed: 21,
+    recovered: 0,
+    deaths: 0
+  },
+  {
+    city: "Daule",
+    province: "Guayas",
+    id: "daule",
+    latlng: [-1.8629, -79.978],
+    active: 13,
+    confirmed: 13,
     recovered: 0,
     deaths: 0
   },
@@ -50,16 +60,6 @@ const cities = [
     deaths: 2
   },
   {
-    city: "Daule",
-    province: "Guayas",
-    id: "daule",
-    latlng: [-1.8629, -79.978],
-    active: 7,
-    confirmed: 7,
-    recovered: 0,
-    deaths: 0
-  },
-  {
     city: "Manta",
     province: "Manabí",
     id: "manta",
@@ -74,8 +74,8 @@ const cities = [
     province: "Azuay",
     id: "cuenca",
     latlng: [-2.8975, -79.0017],
-    active: 5,
-    confirmed: 5,
+    active: 7,
+    confirmed: 7,
     recovered: 0,
     deaths: 0
   },
