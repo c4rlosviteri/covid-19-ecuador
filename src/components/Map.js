@@ -37,18 +37,6 @@ const Confirmed = styled.h4`
   }
 `;
 
-const Active = styled(Confirmed)`
-  color: ${props => props.theme.orange};
-`;
-
-const Recovered = styled(Confirmed)`
-  color: ${props => props.theme.green};
-`;
-
-const Deaths = styled(Confirmed)`
-  color: ${props => props.theme.black};
-`;
-
 function PointMarker({ center, children, isSelected, radius }) {
   const markerRef = useRef(null);
 
@@ -75,79 +63,59 @@ function PointMarker({ center, children, isSelected, radius }) {
 }
 
 function Map({ selectedIndex }) {
-  const maxActive = useMemo(
+  const maxConfirmed = useMemo(
     () =>
       cities
-        .map(({ active }) => active)
+        .map(({ confirmed }) => confirmed)
         .reduce((acc, current) => (acc > current ? acc : current)),
     []
   );
 
-  const minActive = useMemo(
+  const minConfirmed = useMemo(
     () =>
       cities
-        .map(({ active }) => active)
+        .map(({ confirmed }) => confirmed)
         .reduce((acc, current) => (acc < current ? acc : current)),
     []
   );
 
   const getRadius = useCallback(
-    active => {
+    confirmed => {
       const maxRadius = 30;
       const minRadius = 5;
 
-      if (active === maxActive) {
+      if (confirmed === maxConfirmed) {
         return maxRadius;
-      } else if (active === minActive) {
+      } else if (confirmed === minConfirmed) {
         return minRadius;
       } else {
-        return (active * 100) / maxActive + minRadius - minActive;
+        return (confirmed * maxRadius) / maxConfirmed + minRadius;
       }
     },
-    [maxActive, minActive]
+    [maxConfirmed, minConfirmed]
   );
 
   return (
     <LeafletMap center={[-1.5395, -78.23037]} zoom={7}>
-      <TileLayer
-        updateWhenZooming
-        url="//{s}.tile.osm.org/{z}/{x}/{y}.png"
-      />
-      {cities.map(
-        (
-          { active, city, confirmed, deaths, id, latlng, province, recovered },
-          index
-        ) => (
-          <PointMarker
-            center={latlng}
-            key={id}
-            isSelected={index === selectedIndex}
-            radius={getRadius(active)}
-          >
-            <Cases aria-hidden={index !== selectedIndex} role="alert">
-              <City>
-                {city}, {province}
-              </City>
-              <Confirmed>
-                <span>Confirmados</span>
-                <strong>{confirmed}</strong>
-              </Confirmed>
-              <Active>
-                <span>Activos</span>
-                <strong>{active}</strong>
-              </Active>
-              <Recovered>
-                <span>Recuperados</span>
-                <strong>{recovered}</strong>
-              </Recovered>
-              <Deaths>
-                <span>Muertos</span>
-                <strong>{deaths}</strong>
-              </Deaths>
-            </Cases>
-          </PointMarker>
-        )
-      )}
+      <TileLayer updateWhenZooming url="//{s}.tile.osm.org/{z}/{x}/{y}.png" />
+      {cities.map(({ confirmed, city, id, latlng, province }, index) => (
+        <PointMarker
+          center={latlng}
+          key={id}
+          isSelected={index === selectedIndex}
+          radius={getRadius(confirmed)}
+        >
+          <Cases aria-hidden={index !== selectedIndex} role="alert">
+            <City>
+              {city}, {province}
+            </City>
+            <Confirmed>
+              <span>Confirmados</span>
+              <strong>{confirmed}</strong>
+            </Confirmed>
+          </Cases>
+        </PointMarker>
+      ))}
     </LeafletMap>
   );
 }

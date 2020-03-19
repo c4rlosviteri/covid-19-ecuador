@@ -3,13 +3,14 @@ import styled from "styled-components";
 import { FaTimes, FaChartLine, FaClock, FaCalendarAlt } from "react-icons/fa";
 
 import CasesChart from "./CasesChart";
+import cases from "../data/cases";
 import cities from "../data/cities";
 
 const SideBar = styled.section`
   background-color: ${props => props.theme.white};
   height: 100vh;
   overflow-y: auto;
-  padding: 1.5rem;
+  padding: 1.25rem;
 
   @media (max-width: 990px) {
     ${props => (props.open ? "" : "transform: translateX(-100%);")}
@@ -234,29 +235,11 @@ function Stats({ selectedIndex, setSelectedIndex }) {
     []
   );
 
-  const totalActive = useMemo(
-    () =>
-      cities
-        .map(({ active }) => active)
-        .reduce((acc, current) => acc + current),
-    []
-  );
+  const totalActive = cases[cases.length - 1][2];
 
-  const totalRecovered = useMemo(
-    () =>
-      cities
-        .map(({ recovered }) => recovered)
-        .reduce((acc, current) => acc + current),
-    []
-  );
+  const totalRecovered = cases[cases.length - 1][4];
 
-  const totalDeaths = useMemo(
-    () =>
-      cities
-        .map(({ deaths }) => deaths)
-        .reduce((acc, current) => acc + current),
-    []
-  );
+  const totalDeaths = cases[cases.length - 1][3];
 
   return (
     <>
@@ -277,7 +260,7 @@ function Stats({ selectedIndex, setSelectedIndex }) {
         <LastUpdate>
           <span>Última actualización</span>
           <span>
-            <FaCalendarAlt aria-hidden="true" /> 2020-03-19 - 10:15{" "}
+            <FaCalendarAlt aria-hidden="true" /> 2020-03-19 - 18:15{" "}
             <FaClock aria-hidden="true" />
           </span>
         </LastUpdate>

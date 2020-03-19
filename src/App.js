@@ -41,7 +41,7 @@ const Container = styled.main`
 
   @media (min-width: 990px) {
     display: grid;
-    grid-template-columns: 360px 1fr;
+    grid-template-columns: 25rem 1fr;
   }
 `;
 

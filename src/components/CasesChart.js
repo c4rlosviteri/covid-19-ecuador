@@ -20,8 +20,13 @@ function CasesChart() {
       <Chart
         chartType="Line"
         data={cases}
-        height={360}
+        height={340}
         loader={<div>Cargando…</div>}
+        options={{
+          isStacked: true,
+          legend: { position: 'top', maxLines: 3 },
+        }}
+        width="100%"
       />
     </>
   );
