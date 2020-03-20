@@ -4,35 +4,35 @@ const cities = [
     province: "Guayas",
     id: "guayaquil",
     latlng: [-2.2067, -79.8884],
-    confirmed: 114
+    confirmed: 174
   },
   {
     city: "Samborondón",
     province: "Guayas",
     id: "samborondon",
     latlng: [-2.0908, -79.8779],
-    confirmed: 36
-  },
-  {
-    city: "Daule",
-    province: "Guayas",
-    id: "daule",
-    latlng: [-1.8629, -79.978],
-    confirmed: 21
+    confirmed: 48
   },
   {
     city: "Quito",
     province: "Pichincha",
     id: "quito",
     latlng: [-0.1893, -78.4813],
-    confirmed: 16
+    confirmed: 32
+  },
+  {
+    city: "Daule",
+    province: "Guayas",
+    id: "daule",
+    latlng: [-1.8629, -79.978],
+    confirmed: 27
   },
   {
     city: "Babahoyo",
     province: "Los Ríos",
     id: "babahoyo",
     latlng: [-1.8003, -79.524],
-    confirmed: 15
+    confirmed: 16
   },
   {
     city: "Cuenca",
@@ -46,21 +46,21 @@ const cities = [
     province: "Guayas",
     id: "duran",
     latlng: [-2.1701, -79.822],
-    confirmed: 8
+    confirmed: 11
   },
   {
     city: "Manta",
     province: "Manabí",
     id: "manta",
     latlng: [-0.9703, -80.7042],
-    confirmed: 7
+    confirmed: 6
   },
   {
     city: "Milagro",
     province: "Guayas",
     id: "milagro",
     latlng: [-2.1373, -79.5918],
-    confirmed: 5
+    confirmed: 6
   },
   {
     city: "Azogues",
@@ -91,11 +91,32 @@ const cities = [
     confirmed: 2
   },
   {
+    city: "Pedro Carbo",
+    province: "Guayas",
+    id: "pedro-carbo",
+    latlng: [-1.8672, -80.3009],
+    confirmed: 2
+  },
+  {
     city: "Loja",
     province: "Loja",
     id: "loja",
     latlng: [-4.0075, -79.2433],
     confirmed: 2
+  },
+  {
+    city: "Ibarra",
+    province: "Imbabura",
+    id: "ibarra",
+    latlng: [0.3517, -78.1579],
+    confirmed: 2
+  },
+  {
+    city: "Riobamba",
+    province: "Chimborazo",
+    id: "riobamba",
+    latlng: [-1.67314, -78.6486],
+    confirmed: 1
   },
   {
     city: "Machala",
@@ -126,17 +147,17 @@ const cities = [
     confirmed: 1
   },
   {
+    city: "Santa Rosa",
+    province: "El Oro",
+    id: "santa-rosa",
+    latlng: [-3.41455, -80.15490],
+    confirmed: 1
+  },
+  {
     city: "Urdaneta",
     province: "Los Ríos",
     id: "urdaneta",
     latlng: [-1.5604, -79.3907],
-    confirmed: 1
-  },
-  {
-    city: "Ibarra",
-    province: "Imbabura",
-    id: "ibarra",
-    latlng: [0.3517, -78.1579],
     confirmed: 1
   },
   {
@@ -179,6 +200,34 @@ const cities = [
     province: "Santo Domingo",
     id: "santo-domingo",
     latlng: [-0.2410, -79.1992],
+    confirmed: 1
+  },
+  {
+    city: "Alfredo Baquerizo Moreno",
+    province: "Guayas",
+    id: "alfredo-baquerizo-moreno",
+    latlng: [-1.9494, -79.5495],
+    confirmed: 1
+  },
+  {
+    city: "Naranjal",
+    province: "Guayas",
+    id: "naranjal",
+    latlng: [-2.5731, -79.5325],
+    confirmed: 1
+  },
+  {
+    city: "Ventanas",
+    province: "Los Rios",
+    id: "ventanas",
+    latlng: [-1.3335, -79.3369],
+    confirmed: 1
+  },
+  {
+    city: "Santa Elena",
+    province: "Santa Elena",
+    id: "santa-elena",
+    latlng: [-2.1954, -80.5669],
     confirmed: 1
   }
 ];
