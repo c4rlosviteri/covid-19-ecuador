@@ -38,7 +38,7 @@ const cities = [
     city: "Cuenca",
     province: "Azuay",
     id: "cuenca",
-    latlng: [-2.8975, -79.0017],
+    latlng: [-2.8956, -78.9900],
     confirmed: 14
   },
   {
@@ -66,7 +66,7 @@ const cities = [
     city: "Azogues",
     province: "Cañar",
     id: "Azogues",
-    latlng: [-2.7397,-78.8626],
+    latlng: [-2.7403, -78.8460],
     confirmed: 3
   },
   {
@@ -80,7 +80,7 @@ const cities = [
     city: "Colta",
     province: "Chimborazo",
     id: "colta",
-    latlng: [-1.7384,-78.7758],
+    latlng: [-1.7365, -78.7613],
     confirmed: 2
   },
   {
@@ -94,21 +94,21 @@ const cities = [
     city: "Pedro Carbo",
     province: "Guayas",
     id: "pedro-carbo",
-    latlng: [-1.8672, -80.3009],
+    latlng: [-1.8166, -80.2347],
     confirmed: 2
   },
   {
     city: "Loja",
     province: "Loja",
     id: "loja",
-    latlng: [-4.0075, -79.2433],
+    latlng: [-4.0031, -79.2085],
     confirmed: 2
   },
   {
     city: "Ibarra",
     province: "Imbabura",
     id: "ibarra",
-    latlng: [0.3517, -78.1579],
+    latlng: [0.3468, -78.1254],
     confirmed: 2
   },
   {
@@ -129,7 +129,7 @@ const cities = [
     city: "Lago Agrio",
     province: "Sucumbíos",
     id: "lago-agrio",
-    latlng: [-0.0817, -76.8921],
+    latlng: [0.0796, -76.8878],
     confirmed: 1
   },
   {
@@ -150,7 +150,7 @@ const cities = [
     city: "Santa Rosa",
     province: "El Oro",
     id: "santa-rosa",
-    latlng: [-3.41455, -80.15490],
+    latlng: [-3.4573, -79.9647],
     confirmed: 1
   },
   {
@@ -164,49 +164,49 @@ const cities = [
     city: "Calvas",
     province: "Loja",
     id: "calvas",
-    latlng: [-4.3216, -79.5617],
+    latlng: [-4.3272, -79.5567],
     confirmed: 1
   },
   {
     city: "Macará",
     province: "Loja",
     id: "macara",
-    latlng: [-4.3753, -79.9598],
+    latlng: [-4.3772, -79.9419],
     confirmed: 1
   },
   {
     city: "Montecristi",
     province: "Manabí",
     id: "montecristi",
-    latlng: [-1.0461, -80.6695],
+    latlng: [-1.0446, -80.6591],
     confirmed: 1
   },
   {
     city: "Macas",
     province: "Morona Santiago",
     id: "macas",
-    latlng: [-2.3116, -78.1402],
+    latlng: [-2.3062, -78.1191],
     confirmed: 1
   },
   {
     city: "Sucúa",
     province: "Morona Santiago",
     id: "sucua",
-    latlng: [-2.4573, -78.1873],
+    latlng: [-2.4558, -78.1702],
     confirmed: 1
   },
   {
     city: "Santo Domingo",
     province: "Santo Domingo",
     id: "santo-domingo",
-    latlng: [-0.2410, -79.1992],
+    latlng: [-0.2504, -79.1714],
     confirmed: 1
   },
   {
     city: "Alfredo Baquerizo Moreno",
     province: "Guayas",
     id: "alfredo-baquerizo-moreno",
-    latlng: [-1.9494, -79.5495],
+    latlng: [-1.8921, -79.5565],
     confirmed: 1
   },
   {
@@ -220,14 +220,14 @@ const cities = [
     city: "Ventanas",
     province: "Los Rios",
     id: "ventanas",
-    latlng: [-1.3335, -79.3369],
+    latlng: [-1.4479, -79.4620],
     confirmed: 1
   },
   {
     city: "Santa Elena",
     province: "Santa Elena",
     id: "santa-elena",
-    latlng: [-2.1954, -80.5669],
+    latlng: [-2.2273, -80.8596],
     confirmed: 1
   }
 ];
