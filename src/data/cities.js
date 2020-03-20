@@ -4,28 +4,35 @@ const cities = [
     province: "Guayas",
     id: "guayaquil",
     latlng: [-2.2067, -79.8884],
-    confirmed: 174
+    confirmed: 205
   },
   {
     city: "Samborondón",
     province: "Guayas",
     id: "samborondon",
     latlng: [-2.0908, -79.8779],
-    confirmed: 48
+    confirmed: 52
   },
   {
     city: "Quito",
     province: "Pichincha",
     id: "quito",
     latlng: [-0.1893, -78.4813],
-    confirmed: 32
+    confirmed: 35
   },
   {
     city: "Daule",
     province: "Guayas",
     id: "daule",
     latlng: [-1.8629, -79.978],
-    confirmed: 27
+    confirmed: 31
+  },
+  {
+    city: "Cuenca",
+    province: "Azuay",
+    id: "cuenca",
+    latlng: [-2.8956, -78.9900],
+    confirmed: 18
   },
   {
     city: "Babahoyo",
@@ -35,18 +42,11 @@ const cities = [
     confirmed: 16
   },
   {
-    city: "Cuenca",
-    province: "Azuay",
-    id: "cuenca",
-    latlng: [-2.8956, -78.9900],
-    confirmed: 14
-  },
-  {
     city: "Durán",
     province: "Guayas",
     id: "duran",
     latlng: [-2.1701, -79.822],
-    confirmed: 11
+    confirmed: 16
   },
   {
     city: "Manta",
@@ -61,6 +61,13 @@ const cities = [
     id: "milagro",
     latlng: [-2.1373, -79.5918],
     confirmed: 6
+  },
+  {
+    city: "Guaranda",
+    province: "Bolivar",
+    id: "guaranda",
+    latlng: [-1.5908, -78.9990],
+    confirmed: 4
   },
   {
     city: "Azogues",
@@ -81,13 +88,6 @@ const cities = [
     province: "Chimborazo",
     id: "colta",
     latlng: [-1.7365, -78.7613],
-    confirmed: 2
-  },
-  {
-    city: "Guaranda",
-    province: "Bolivar",
-    id: "guaranda",
-    latlng: [-1.5908, -78.9990],
     confirmed: 2
   },
   {
@@ -112,6 +112,20 @@ const cities = [
     confirmed: 2
   },
   {
+    city: "Lago Agrio",
+    province: "Sucumbíos",
+    id: "lago-agrio",
+    latlng: [0.0796, -76.8878],
+    confirmed: 2
+  },
+  {
+    city: "Calvas",
+    province: "Loja",
+    id: "calvas",
+    latlng: [-4.3272, -79.5567],
+    confirmed: 2
+  },
+  {
     city: "Riobamba",
     province: "Chimborazo",
     id: "riobamba",
@@ -123,13 +137,6 @@ const cities = [
     province: "El Oro",
     id: "machala",
     latlng: [-3.2596, -79.9581],
-    confirmed: 1
-  },
-  {
-    city: "Lago Agrio",
-    province: "Sucumbíos",
-    id: "lago-agrio",
-    latlng: [0.0796, -76.8878],
     confirmed: 1
   },
   {
@@ -158,13 +165,6 @@ const cities = [
     province: "Los Ríos",
     id: "urdaneta",
     latlng: [-1.5604, -79.3907],
-    confirmed: 1
-  },
-  {
-    city: "Calvas",
-    province: "Loja",
-    id: "calvas",
-    latlng: [-4.3272, -79.5567],
     confirmed: 1
   },
   {
@@ -213,14 +213,21 @@ const cities = [
     city: "Naranjal",
     province: "Guayas",
     id: "naranjal",
-    latlng: [-2.5731, -79.5325],
+    latlng: [-2.6746, -79.6171],
     confirmed: 1
   },
   {
     city: "Ventanas",
-    province: "Los Rios",
+    province: "Los Ríos",
     id: "ventanas",
     latlng: [-1.4479, -79.4620],
+    confirmed: 1
+  },
+  {
+    city: "Buena Fé",
+    province: "Los Ríos",
+    id: "buena-fe",
+    latlng: [-0.8888, -79.4894],
     confirmed: 1
   },
   {
@@ -228,6 +235,27 @@ const cities = [
     province: "Santa Elena",
     id: "santa-elena",
     latlng: [-2.2273, -80.8596],
+    confirmed: 1
+  },
+  {
+    city: "Santa Lucía",
+    province: "Guayas",
+    id: "santa-lucia",
+    latlng: [-1.7146, -79.9841],
+    confirmed: 1
+  },
+  {
+    city: "Jipijapa",
+    province: "Manabí",
+    id: "jipijapa",
+    latlng: [-1.3518, -80.5823],
+    confirmed: 1
+  },
+  {
+    city: "Portoviejo",
+    province: "Manabí",
+    id: "protoviejo",
+    latlng: [-1.0524, -80.4624],
     confirmed: 1
   }
 ];
