@@ -4,28 +4,28 @@ const cities = [
     province: "Guayas",
     id: "guayaquil",
     latlng: [-2.2067, -79.8884],
-    confirmed: 205
+    confirmed: 241
   },
   {
     city: "Samborondón",
     province: "Guayas",
     id: "samborondon",
     latlng: [-2.0908, -79.8779],
-    confirmed: 52
+    confirmed: 69
   },
   {
     city: "Quito",
     province: "Pichincha",
     id: "quito",
     latlng: [-0.1893, -78.4813],
-    confirmed: 35
+    confirmed: 44
   },
   {
     city: "Daule",
     province: "Guayas",
     id: "daule",
     latlng: [-1.8629, -79.978],
-    confirmed: 31
+    confirmed: 34
   },
   {
     city: "Cuenca",
@@ -35,31 +35,31 @@ const cities = [
     confirmed: 18
   },
   {
-    city: "Babahoyo",
-    province: "Los Ríos",
-    id: "babahoyo",
-    latlng: [-1.8003, -79.524],
-    confirmed: 16
-  },
-  {
     city: "Durán",
     province: "Guayas",
     id: "duran",
     latlng: [-2.1701, -79.822],
-    confirmed: 16
+    confirmed: 18
   },
   {
-    city: "Manta",
-    province: "Manabí",
-    id: "manta",
-    latlng: [-0.9703, -80.7042],
-    confirmed: 6
+    city: "Babahoyo",
+    province: "Los Ríos",
+    id: "babahoyo",
+    latlng: [-1.8003, -79.524],
+    confirmed: 17
   },
   {
     city: "Milagro",
     province: "Guayas",
     id: "milagro",
     latlng: [-2.1373, -79.5918],
+    confirmed: 11
+  },
+  {
+    city: "Manta",
+    province: "Manabí",
+    id: "manta",
+    latlng: [-0.9703, -80.7042],
     confirmed: 6
   },
   {
@@ -84,6 +84,20 @@ const cities = [
     confirmed: 3
   },
   {
+    city: "Ibarra",
+    province: "Imbabura",
+    id: "ibarra",
+    latlng: [0.3468, -78.1254],
+    confirmed: 3
+  },
+  {
+    city: "Santo Domingo",
+    province: "Santo Domingo",
+    id: "santo-domingo",
+    latlng: [-0.2504, -79.1714],
+    confirmed: 3
+  },
+  {
     city: "Colta",
     province: "Chimborazo",
     id: "colta",
@@ -105,13 +119,6 @@ const cities = [
     confirmed: 2
   },
   {
-    city: "Ibarra",
-    province: "Imbabura",
-    id: "ibarra",
-    latlng: [0.3468, -78.1254],
-    confirmed: 2
-  },
-  {
     city: "Lago Agrio",
     province: "Sucumbíos",
     id: "lago-agrio",
@@ -130,7 +137,14 @@ const cities = [
     province: "Chimborazo",
     id: "riobamba",
     latlng: [-1.67314, -78.6486],
-    confirmed: 1
+    confirmed: 2
+  },
+  {
+    city: "Esmeraldas",
+    province: "Esmeraldas",
+    id: "esmeraldas",
+    latlng: [0.9666, -79.6512],
+    confirmed: 2
   },
   {
     city: "Machala",
@@ -196,13 +210,6 @@ const cities = [
     confirmed: 1
   },
   {
-    city: "Santo Domingo",
-    province: "Santo Domingo",
-    id: "santo-domingo",
-    latlng: [-0.2504, -79.1714],
-    confirmed: 1
-  },
-  {
     city: "Alfredo Baquerizo Moreno",
     province: "Guayas",
     id: "alfredo-baquerizo-moreno",
@@ -256,6 +263,13 @@ const cities = [
     province: "Manabí",
     id: "protoviejo",
     latlng: [-1.0524, -80.4624],
+    confirmed: 1
+  },
+  {
+    city: "Santa Isabel",
+    province: "Azuay",
+    id: "santa-isabel",
+    latlng: [-3.2755, -79.3150],
     confirmed: 1
   }
 ];
