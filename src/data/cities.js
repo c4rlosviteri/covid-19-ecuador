@@ -4,21 +4,21 @@ const cities = [
     province: "Guayas",
     id: "guayaquil",
     latlng: [-2.2067, -79.8884],
-    confirmed: 241
+    confirmed: 251
   },
   {
     city: "Samborondón",
     province: "Guayas",
     id: "samborondon",
     latlng: [-2.0908, -79.8779],
-    confirmed: 69
+    confirmed: 73
   },
   {
     city: "Quito",
     province: "Pichincha",
     id: "quito",
     latlng: [-0.1893, -78.4813],
-    confirmed: 44
+    confirmed: 50
   },
   {
     city: "Daule",
@@ -53,7 +53,7 @@ const cities = [
     province: "Guayas",
     id: "milagro",
     latlng: [-2.1373, -79.5918],
-    confirmed: 11
+    confirmed: 12
   },
   {
     city: "Manta",
@@ -95,7 +95,7 @@ const cities = [
     province: "Santo Domingo",
     id: "santo-domingo",
     latlng: [-0.2504, -79.1714],
-    confirmed: 3
+    confirmed: 4
   },
   {
     city: "Colta",
@@ -182,6 +182,13 @@ const cities = [
     confirmed: 1
   },
   {
+    city: "Quevedo",
+    province: "Los Ríos",
+    id: "quevedo",
+    latlng: [-1.0250, -79.4632],
+    confirmed: 1
+  },
+  {
     city: "Macará",
     province: "Loja",
     id: "macara",
@@ -238,6 +245,13 @@ const cities = [
     confirmed: 1
   },
   {
+    city: "Mocache",
+    province: "Los Ríos",
+    id: "mocache",
+    latlng: [-1.1839, -79.5124],
+    confirmed: 1
+  },
+  {
     city: "Santa Elena",
     province: "Santa Elena",
     id: "santa-elena",
@@ -270,6 +284,20 @@ const cities = [
     province: "Azuay",
     id: "santa-isabel",
     latlng: [-3.2755, -79.3150],
+    confirmed: 1
+  },
+  {
+    city: "Chillanes",
+    province: "Chimborazo",
+    id: "chillanes",
+    latlng: [-1.9426, -79.0668],
+    confirmed: 1
+  },
+  {
+    city: "Salitre",
+    province: "Guayas",
+    id: "salitre",
+    latlng: [-1.8300, -79.8165],
     confirmed: 1
   }
 ];

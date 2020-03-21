@@ -166,7 +166,7 @@ const CitiesList = styled.ul`
 const Separator = styled.hr`
   background-color: ${props => props.theme.lightGray};
   border: 0;
-  color: #f00;
+  color: ${props => props.theme.lightGray};
   height: 1px;
   margin-bottom: 1.5em;
   margin-top: 1.5em;
@@ -260,7 +260,7 @@ function Stats({ selectedIndex, setSelectedIndex }) {
         <LastUpdate>
           <span>Última actualización</span>
           <span>
-            <FaCalendarAlt aria-hidden="true" /> 2020-03-21 - 10:15{" "}
+            <FaCalendarAlt aria-hidden="true" /> 2020-03-21 - 17:10{" "}
             <FaClock aria-hidden="true" />
           </span>
         </LastUpdate>
