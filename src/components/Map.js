@@ -62,7 +62,7 @@ function PointMarker({ center, children, isSelected, radius }) {
   );
 }
 
-function Map({ selectedIndex }) {
+function Map({ selectedId }) {
   const maxConfirmed = useMemo(
     () =>
       cities
@@ -98,14 +98,14 @@ function Map({ selectedIndex }) {
   return (
     <LeafletMap center={[-1.5395, -78.23037]} zoom={7}>
       <TileLayer updateWhenZooming url="//{s}.tile.osm.org/{z}/{x}/{y}.png" />
-      {cities.map(({ confirmed, city, id, latlng, province }, index) => (
+      {cities.map(({ confirmed, city, id, latlng, province }) => (
         <PointMarker
           center={latlng}
           key={id}
-          isSelected={index === selectedIndex}
+          isSelected={id === selectedId}
           radius={getRadius(confirmed)}
         >
-          <Cases aria-hidden={index !== selectedIndex} role="alert">
+          <Cases aria-hidden={id !== selectedId} role="alert">
             <City>
               {city}, {province}
             </City>

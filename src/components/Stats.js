@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import {
   FaBiohazard,
@@ -9,7 +9,8 @@ import {
   FaMicroscope,
   FaSkullCrossbones,
   FaTimes,
-  FaUserCheck
+  FaUserCheck,
+  FaSearch
 } from "react-icons/fa";
 
 import CasesChart from "./CasesChart";
@@ -156,8 +157,6 @@ const GridItem = styled.div`
     }
   }
 
-
-
   &:nth-of-type(4),
   &:nth-of-type(5),
   &:nth-of-type(6) {
@@ -166,7 +165,7 @@ const GridItem = styled.div`
     }
 
     strong {
-      font-size: 1.55rem;
+      font-size: 1.5rem;
     }
   }
 
@@ -194,7 +193,6 @@ const CitiesList = styled.ul`
   padding-left: 0;
 
   li {
-
     @media (max-width: 990px) {
       padding-bottom: 0.625rem;
       padding-top: 0.625rem;
@@ -202,7 +200,6 @@ const CitiesList = styled.ul`
   }
 
   li + li {
-
     @media (max-width: 990px) {
       border-top: 1px solid ${props => props.theme.lightGray};
     }
@@ -268,18 +265,60 @@ const LastUpdate = styled.p`
   }
 `;
 
-function Cities({ selectedIndex, setSelectedIndex }) {
+const InputContainer = styled.div`
+  margin-bottom: 1.5rem;
+  position: relative;
+
+  label {
+    color: ${props => props.theme.gray};
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 0.375rem;
+    text-transform: uppercase;
+  }
+
+  input {
+    border: 1px solid ${props => props.theme.lightGray};
+    border-radius: 3px;
+    padding: 0.75rem 3rem 0.75rem 0.75rem;
+    width: 100%;
+  }
+
+  .search-icon,
+  .clear-icon {
+    position: absolute;
+    right: 0.75rem;
+    transform: translateY(-50%);
+    top: 2.875rem;
+  }
+
+  .search-icon {
+    ${props => (props.query ? "display: none" : "display: block")};
+    pointer-events: none;
+  }
+
+  .clear-icon {
+    ${props => (props.query ? "display: block" : "display: none")};
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  svg {
+    color: ${props => props.theme.blue};
+  }
+`;
+
+function Cities({ filteredCities, selectedId, setSelectedId }) {
   return (
-    <>
-      <Separator />
-      <CitiesList>
-        {cities.map(({ confirmed, city, id, province }, index) => (
-          <li>
+    <CitiesList>
+      {filteredCities.length > 0 ? (
+        filteredCities.map(({ confirmed, city, id, province }) => (
+          <li key={id}>
             <button
-              key={id}
-              onClick={() =>
-                setSelectedIndex(selectedIndex === index ? -1 : index)
-              }
+              onClick={() => setSelectedId(selectedId === id ? null : id)}
             >
               <span>
                 {city}, {province}
@@ -289,14 +328,20 @@ function Cities({ selectedIndex, setSelectedIndex }) {
               </strong>
             </button>
           </li>
-        ))}
-      </CitiesList>
-    </>
+        ))
+      ) : (
+        <li>No hay resultados…</li>
+      )}
+    </CitiesList>
   );
 }
 
-function Stats({ selectedIndex, setSelectedIndex }) {
+function Stats({ selectedId, setSelectedId }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const debouncedQuery = useDebounce(query);
+  console.log({ debouncedQuery });
+  const filteredCities = useCitiesSearch(debouncedQuery);
 
   const totalConfirmed = useMemo(
     () =>
@@ -364,32 +409,90 @@ function Stats({ selectedIndex, setSelectedIndex }) {
           <GridItem>
             <h2>Descartados</h2>
             <strong>
-              <FaUserCheck aria-hidden="true" size={24} /> {other.discarded}
+              <FaUserCheck aria-hidden="true" size={20} /> {other.discarded}
             </strong>
           </GridItem>
           <GridItem>
             <h2>Sospechosos</h2>
             <strong>
-              <FaMicroscope aria-hidden="true" size={24} /> {other.suspicious}
+              <FaMicroscope aria-hidden="true" size={20} /> {other.suspicious}
             </strong>
           </GridItem>
           <GridItem>
             <h2>Cerco epidemiológico</h2>
             <strong>
-              <FaChartLine aria-hidden="true" size={24} />{" "}
+              <FaChartLine aria-hidden="true" size={20} />{" "}
               {other.epidemiologicalFence}
             </strong>
           </GridItem>
         </StatsGrid>
+        <Separator />
+        <InputContainer query={query}>
+          <label htmlFor="search">Buscar ciudad o provincia</label>
+          <input
+            id="search"
+            type="text"
+            onChange={e => setQuery(e.target.value)}
+            placeholder="Buscar…"
+            value={query}
+          />
+          <FaSearch aria-hidden="true" className="search-icon" size={24} />
+          <FaTimes
+            aria-hidden="true"
+            className="clear-icon"
+            onClick={() => setQuery("")}
+            role="button"
+            size={24}
+          />
+        </InputContainer>
         <Cities
-          selectedIndex={selectedIndex}
-          setSelectedIndex={setSelectedIndex}
+          filteredCities={filteredCities}
+          selectedId={selectedId}
+          setSelectedId={setSelectedId}
         />
         <Separator />
         <CasesChart />
       </SideBar>
     </>
   );
+}
+
+const removeDiacritics = string =>
+  string.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+const normalizeString = string => removeDiacritics(string).toLowerCase();
+
+function useCitiesSearch(query) {
+  const [filteredCities, setFilteredCities] = useState(cities);
+
+  useMemo(() => {
+    const matches = cities.filter(({ city, province }) => {
+      return (
+        normalizeString(city).includes(normalizeString(query).trim()) ||
+        normalizeString(province).includes(normalizeString(query).trim())
+      );
+    });
+
+    setFilteredCities(matches);
+  }, [query]);
+
+  return filteredCities;
+}
+
+function useDebounce(query, delay = 600) {
+  const [debouncedQuery, setDebouncedQuery] = useState(query);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedQuery(query);
+    }, delay);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [delay, query]);
+
+  return debouncedQuery;
 }
 
 export default Stats;

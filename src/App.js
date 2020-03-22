@@ -89,17 +89,17 @@ ReactGA.initialize("UA-115305699-2");
 ReactGA.pageview("/covid19ecuador");
 
 function App() {
-  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [selectedId, setSelectedId] = useState(null);
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Container>
         <Stats
-          selectedIndex={selectedIndex}
-          setSelectedIndex={setSelectedIndex}
+          selectedId={selectedId}
+          setSelectedId={setSelectedId}
         />
-        <Map selectedIndex={selectedIndex} />
+        <Map selectedId={selectedId} />
         <Symptoms href="tel:171">
           <FaPhone /> ¿Tienes sintomas?
         </Symptoms>
