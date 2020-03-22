@@ -331,7 +331,7 @@ function Stats({ selectedIndex, setSelectedIndex }) {
         <LastUpdate>
           <span>Última actualización COE Nacional</span>
           <span>
-            <FaCalendarAlt aria-hidden="true" /> 2020-03-21 - 17:00{" "}
+            <FaCalendarAlt aria-hidden="true" /> 2020-03-22 - 11:00{" "}
             <FaClock aria-hidden="true" />
           </span>
         </LastUpdate>
