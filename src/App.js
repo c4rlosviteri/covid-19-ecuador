@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactGA from "react-ga";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
+import { FaPhone } from "react-icons/fa";
 
 import Map from "./components/Map";
 import Stats from "./components/Stats";
@@ -45,6 +46,30 @@ const Container = styled.main`
   }
 `;
 
+const Symptoms = styled.a`
+  align-items: center;
+  appearance: none;
+  background-color: ${props => props.theme.white};
+  border: 0;
+  border-radius: 3px;
+  bottom: 1rem;
+  box-shadow: 0 2px 4px ${props => props.theme.shadow};
+  color: ${props => props.theme.black};
+  display: flex;
+  font-weight: 700;
+  height: 44px;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  right: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  z-index: 314159;
+
+  svg {
+    margin-right: 0.5rem;
+  }
+`;
+
 export const theme = {
   black: "#313131",
   blue: "#00a8cc",
@@ -53,8 +78,10 @@ export const theme = {
   green: "#21bf73",
   lightGray: "#e0e0e0",
   orange: "#ffa34d",
+  purple: "#8b2f97",
   red: "#c02739",
   shadow: "rgba(0, 0, 0, 0.3)",
+  yellow: "#ffd369",
   white: "#ffffff"
 };
 
@@ -73,6 +100,9 @@ function App() {
           setSelectedIndex={setSelectedIndex}
         />
         <Map selectedIndex={selectedIndex} />
+        <Symptoms href="tel:171">
+          <FaPhone /> ¿Tienes sintomas?
+        </Symptoms>
       </Container>
     </ThemeProvider>
   );

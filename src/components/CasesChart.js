@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Chart } from "react-google-charts";
 
-import cases from "../data/cases";
+import { cases } from "../data/cases";
 
 const Title = styled.h2`
   color: ${props => props.theme.gray};
@@ -24,7 +24,7 @@ function CasesChart() {
         loader={<div>Cargando…</div>}
         options={{
           isStacked: true,
-          legend: { position: 'top', maxLines: 3 },
+          legend: { position: "top", maxLines: 3 }
         }}
         width="100%"
       />

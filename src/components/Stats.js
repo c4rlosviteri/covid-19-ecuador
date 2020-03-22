@@ -1,9 +1,19 @@
 import React, { useMemo, useState } from "react";
 import styled from "styled-components";
-import { FaTimes, FaChartLine, FaClock, FaCalendarAlt } from "react-icons/fa";
+import {
+  FaBiohazard,
+  FaCalendarAlt,
+  FaChartLine,
+  FaClock,
+  FaNotesMedical,
+  FaMicroscope,
+  FaSkullCrossbones,
+  FaTimes,
+  FaUserCheck
+} from "react-icons/fa";
 
 import CasesChart from "./CasesChart";
-import cases from "../data/cases";
+import { cases, other } from "../data/cases";
 import cities from "../data/cities";
 
 const SideBar = styled.section`
@@ -72,7 +82,7 @@ const Confirmed = styled.div`
   grid-auto-flow: row;
   gap: 0.5rem;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.75rem;
   text-align: center;
 
   h2 {
@@ -84,20 +94,22 @@ const Confirmed = styled.div`
 
   strong {
     color: ${props => props.theme.red};
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 700;
   }
 `;
 
 const StatsGrid = styled.div`
   display: grid;
-  gap: 0.5rem;
+  column-gap: 0.75rem;
   grid-template-columns: repeat(3, 1fr);
+  row-gap: 1.75rem;
 `;
 
 const GridItem = styled.div`
   display: grid;
   grid-auto-flow: row;
+  grid-template-rows: 1fr repeat(2, min-content);
   gap: 0.5rem;
   justify-content: center;
   text-align: center;
@@ -110,8 +122,16 @@ const GridItem = styled.div`
   }
 
   strong {
-    font-size: 1.75rem;
+    align-items: center;
+    display: flex;
+    font-size: 2rem;
     font-weight: 700;
+    justify-content: center;
+  }
+
+  svg {
+    margin-right: 0.5rem;
+    opacity: 0.5;
   }
 
   span {
@@ -135,14 +155,61 @@ const GridItem = styled.div`
       color: ${props => props.theme.black};
     }
   }
+
+
+
+  &:nth-of-type(4),
+  &:nth-of-type(5),
+  &:nth-of-type(6) {
+    h2 {
+      font-size: 0.75rem;
+    }
+
+    strong {
+      font-size: 1.55rem;
+    }
+  }
+
+  &:nth-of-type(4) {
+    strong {
+      color: ${props => props.theme.blue};
+    }
+  }
+
+  &:nth-of-type(5) {
+    strong {
+      color: ${props => props.theme.yellow};
+    }
+  }
+
+  &:nth-of-type(6) {
+    strong {
+      color: ${props => props.theme.purple};
+    }
+  }
 `;
 
 const CitiesList = styled.ul`
   list-style: none;
   padding-left: 0;
 
+  li {
+
+    @media (max-width: 990px) {
+      padding-bottom: 0.625rem;
+      padding-top: 0.625rem;
+    }
+  }
+
   li + li {
-    margin-top: 0.5rem;
+
+    @media (max-width: 990px) {
+      border-top: 1px solid ${props => props.theme.lightGray};
+    }
+
+    @media (min-width: 990px) {
+      margin-top: 0.5rem;
+    }
   }
 
   button {
@@ -154,6 +221,10 @@ const CitiesList = styled.ul`
     justify-content: space-between;
     padding: 0.75rem;
     width: 100%;
+
+    :hover {
+      cursor: pointer;
+    }
 
     @media (max-width: 990px) {
       border: 0;
@@ -258,9 +329,9 @@ function Stats({ selectedIndex, setSelectedIndex }) {
           </span>
         </MainTitle>
         <LastUpdate>
-          <span>Última actualización</span>
+          <span>Última actualización COE Nacional</span>
           <span>
-            <FaCalendarAlt aria-hidden="true" /> 2020-03-21 - 17:10{" "}
+            <FaCalendarAlt aria-hidden="true" /> 2020-03-21 - 17:00{" "}
             <FaClock aria-hidden="true" />
           </span>
         </LastUpdate>
@@ -271,18 +342,43 @@ function Stats({ selectedIndex, setSelectedIndex }) {
         <StatsGrid>
           <GridItem>
             <h2>Activos</h2>
-            <strong>{totalActive}</strong>
+            <strong>
+              <FaBiohazard aria-hidden="true" size={24} /> {totalActive}
+            </strong>
             <span>{((totalActive * 100) / totalConfirmed).toFixed(2)}%</span>
           </GridItem>
           <GridItem>
             <h2>Recuperados</h2>
-            <strong>{totalRecovered}</strong>
+            <strong>
+              <FaNotesMedical aria-hidden="true" size={24} /> {totalRecovered}
+            </strong>
             <span>{((totalRecovered * 100) / totalConfirmed).toFixed(2)}%</span>
           </GridItem>
           <GridItem>
-            <h2>Muertos</h2>
-            <strong>{totalDeaths}</strong>
+            <h2>Fallecidos</h2>
+            <strong>
+              <FaSkullCrossbones aria-hidden="true" size={24} /> {totalDeaths}
+            </strong>
             <span>{((totalDeaths * 100) / totalConfirmed).toFixed(2)}%</span>
+          </GridItem>
+          <GridItem>
+            <h2>Descartados</h2>
+            <strong>
+              <FaUserCheck aria-hidden="true" size={24} /> {other.discarded}
+            </strong>
+          </GridItem>
+          <GridItem>
+            <h2>Sospechosos</h2>
+            <strong>
+              <FaMicroscope aria-hidden="true" size={24} /> {other.suspicious}
+            </strong>
+          </GridItem>
+          <GridItem>
+            <h2>Cerco epidemiológico</h2>
+            <strong>
+              <FaChartLine aria-hidden="true" size={24} />{" "}
+              {other.epidemiologicalFence}
+            </strong>
           </GridItem>
         </StatsGrid>
         <Cities

@@ -178,7 +178,7 @@ const cities = [
     city: "Urdaneta",
     province: "Los Ríos",
     id: "urdaneta",
-    latlng: [-1.5604, -79.3907],
+    latlng: [-1.5724, -79.4727],
     confirmed: 1
   },
   {

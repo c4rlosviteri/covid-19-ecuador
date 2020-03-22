@@ -1,4 +1,4 @@
-const cases = [
+export const cases = [
   ["Fecha", "Confirmados", "Activos", "Muertos", "Recuperados"],
   ["02-29", 1, 1, 0, 0],
   ["03-01", 6, 6, 0, 0],
@@ -21,4 +21,8 @@ const cases = [
   ["03-21", 532, 522, 7, 3]
 ];
 
-export default cases;
+export const other = {
+  discarded: 649,
+  suspicious: 870,
+  epidemiologicalFence: 1213
+}
