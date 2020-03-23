@@ -4,70 +4,77 @@ const cities = [
     province: "Guayas",
     id: "guayaquil",
     latlng: [-2.2067, -79.8884],
-    confirmed: 408
+    confirmed: 526
   },
   {
     city: "Samborondón",
     province: "Guayas",
     id: "samborondon",
     latlng: [-2.0908, -79.8779],
-    confirmed: 89
+    confirmed: 91
   },
   {
     city: "Quito",
     province: "Pichincha",
     id: "quito",
     latlng: [-0.1893, -78.4813],
-    confirmed: 59
+    confirmed: 63
   },
   {
     city: "Daule",
     province: "Guayas",
     id: "daule",
     latlng: [-1.8629, -79.978],
-    confirmed: 44
+    confirmed: 59
   },
   {
     city: "Durán",
     province: "Guayas",
     id: "duran",
     latlng: [-2.1701, -79.822],
-    confirmed: 28
+    confirmed: 37
   },
   {
     city: "Milagro",
     province: "Guayas",
     id: "milagro",
     latlng: [-2.1373, -79.5918],
-    confirmed: 21
+    confirmed: 33
   },
   {
     city: "Cuenca",
     province: "Azuay",
     id: "cuenca",
     latlng: [-2.8956, -78.9900],
-    confirmed: 18
+    confirmed: 22
   },
   {
     city: "Manta",
     province: "Manabí",
     id: "manta",
     latlng: [-0.9703, -80.7042],
-    confirmed: 18
+    confirmed: 20
   },
   {
     city: "Babahoyo",
     province: "Los Ríos",
     id: "babahoyo",
     latlng: [-1.8003, -79.524],
-    confirmed: 17
+    confirmed: 20
   },
   {
     city: "Guaranda",
     province: "Bolivar",
     id: "guaranda",
     latlng: [-1.5908, -78.9990],
-    confirmed: 6
+    confirmed: 7
+  },
+  {
+    city: "Santo Domingo",
+    province: "Santo Domingo",
+    id: "santo-domingo",
+    latlng: [-0.2504, -79.1714],
+    confirmed: 7
   },
   {
     city: "Colta",
@@ -84,17 +91,17 @@ const cities = [
     confirmed: 5
   },
   {
-    city: "Azogues",
-    province: "Cañar",
-    id: "Azogues",
-    latlng: [-2.7403, -78.8460],
-    confirmed: 4
-  },
-  {
     city: "Empalme",
     province: "Guayas",
     id: "empalme",
     latlng: [-1.0427, -79.6378],
+    confirmed: 5
+  },
+  {
+    city: "Azogues",
+    province: "Cañar",
+    id: "Azogues",
+    latlng: [-2.7403, -78.8460],
     confirmed: 4
   },
   {
@@ -112,31 +119,24 @@ const cities = [
     confirmed: 4
   },
   {
-    city: "Santo Domingo",
-    province: "Santo Domingo",
-    id: "santo-domingo",
-    latlng: [-0.2504, -79.1714],
-    confirmed: 4
-  },
-  {
     city: "Santa Rosa",
     province: "El Oro",
     id: "santa-rosa",
     latlng: [-3.4573, -79.9647],
-    confirmed: 3
-  },
-  {
-    city: "Salitre",
-    province: "Guayas",
-    id: "salitre",
-    latlng: [-1.8300, -79.8165],
-    confirmed: 3
+    confirmed: 4
   },
   {
     city: "Santa Lucía",
     province: "Guayas",
     id: "santa-lucia",
     latlng: [-1.7146, -79.9841],
+    confirmed: 4
+  },
+  {
+    city: "Salitre",
+    province: "Guayas",
+    id: "salitre",
+    latlng: [-1.8300, -79.8165],
     confirmed: 3
   },
   {
@@ -151,6 +151,41 @@ const cities = [
     province: "Guayas",
     id: "pedro-carbo",
     latlng: [-1.8166, -80.2347],
+    confirmed: 3
+  },
+  {
+    city: "Esmeraldas",
+    province: "Esmeraldas",
+    id: "esmeraldas",
+    latlng: [0.9666, -79.6512],
+    confirmed: 3
+  },
+  {
+    city: "Yaguachi",
+    province: "Guayas",
+    id: "yaguachi",
+    latlng: [-2.0956, -79.6932],
+    confirmed: 3
+  },
+  {
+    city: "Palora",
+    province: "Morona Santiago",
+    id: "palora",
+    latlng: [-1.7019, -77.9658],
+    confirmed: 2
+  },
+  {
+    city: "Ventanas",
+    province: "Los Ríos",
+    id: "ventanas",
+    latlng: [-1.4479, -79.4620],
+    confirmed: 2
+  },
+  {
+    city: "Santa Elena",
+    province: "Santa Elena",
+    id: "santa-elena",
+    latlng: [-2.2273, -80.8596],
     confirmed: 2
   },
   {
@@ -182,24 +217,24 @@ const cities = [
     confirmed: 2
   },
   {
-    city: "Esmeraldas",
-    province: "Esmeraldas",
-    id: "esmeraldas",
-    latlng: [0.9666, -79.6512],
-    confirmed: 2
-  },
-  {
-    city: "Ventanas",
-    province: "Los Ríos",
-    id: "ventanas",
-    latlng: [-1.4479, -79.4620],
-    confirmed: 2
-  },
-  {
-    city: "Santa Elena",
+    city: "La Libertad",
     province: "Santa Elena",
-    id: "santa-elena",
-    latlng: [-2.2273, -80.8596],
+    id: "la-libertad",
+    latlng: [-2.2313, -80.9000],
+    confirmed: 2
+  },
+  {
+    city: "Sucúa",
+    province: "Morona Santiago",
+    id: "sucua",
+    latlng: [-2.4558, -78.1702],
+    confirmed: 2
+  },
+  {
+    city: "Rumiñahui",
+    province: "Pichincha",
+    id: "rumiñahui",
+    latlng: [-0.3334, -78.4419],
     confirmed: 2
   },
   {
@@ -207,6 +242,13 @@ const cities = [
     province: "El Oro",
     id: "machala",
     latlng: [-3.2596, -79.9581],
+    confirmed: 2
+  },
+  {
+    city: "Arenillas",
+    province: "El Oro",
+    id: "arenillas",
+    latlng: [-3.5552, -80.0683],
     confirmed: 1
   },
   {
@@ -252,13 +294,6 @@ const cities = [
     confirmed: 1
   },
   {
-    city: "Sucúa",
-    province: "Morona Santiago",
-    id: "sucua",
-    latlng: [-2.4558, -78.1702],
-    confirmed: 1
-  },
-  {
     city: "Alfredo Baquerizo Moreno",
     province: "Guayas",
     id: "alfredo-baquerizo-moreno",
@@ -270,6 +305,13 @@ const cities = [
     province: "Guayas",
     id: "naranjal",
     latlng: [-2.6746, -79.6171],
+    confirmed: 1
+  },
+  {
+    city: "Colimes",
+    province: "Guayas",
+    id: "colimes",
+    latlng: [-1.5469, -80.0103],
     confirmed: 1
   },
   {
@@ -336,13 +378,6 @@ const cities = [
     confirmed: 1
   },
   {
-    city: "Yaguachi",
-    province: "Guayas",
-    id: "yaguachi",
-    latlng: [-2.0956, -79.6932],
-    confirmed: 1
-  },
-  {
     city: "Cumandá",
     province: "Chimborazo",
     id: "cumanda",
@@ -350,10 +385,24 @@ const cities = [
     confirmed: 1
   },
   {
-    city: "Rumiñahui",
-    province: "Pichincha",
-    id: "rumiñahui",
-    latlng: [-0.3334, -78.4419],
+    city: "Cañar",
+    province: "Cañar",
+    id: "canar",
+    latlng: [-2.5600, -78.9374],
+    confirmed: 1
+  },
+  {
+    city: "La Maná",
+    province: "Cotopaxi",
+    id: "la-mana",
+    latlng: [-0.9416, -79.2314],
+    confirmed: 1
+  },
+  {
+    city: "Ambato",
+    province: "Tungurahua",
+    id: "ambato",
+    latlng: [-1.2562, -78.6240],
     confirmed: 1
   }
 ];

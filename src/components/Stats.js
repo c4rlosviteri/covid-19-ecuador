@@ -340,7 +340,6 @@ function Stats({ selectedId, setSelectedId }) {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const debouncedQuery = useDebounce(query);
-  console.log({ debouncedQuery });
   const filteredCities = useCitiesSearch(debouncedQuery);
 
   const totalConfirmed = useMemo(
@@ -376,7 +375,7 @@ function Stats({ selectedId, setSelectedId }) {
         <LastUpdate>
           <span>Última actualización COE Nacional</span>
           <span>
-            <FaCalendarAlt aria-hidden="true" /> 2020-03-22 - 11:00{" "}
+            <FaCalendarAlt aria-hidden="true" /> 2020-03-23 - 10:00{" "}
             <FaClock aria-hidden="true" />
           </span>
         </LastUpdate>
