@@ -1,4 +1,10 @@
-import React, { useCallback, useEffect, useMemo, useRef } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState
+} from "react";
 import {
   Map as LeafletMap,
   TileLayer,
@@ -63,21 +69,27 @@ function PointMarker({ center, children, isSelected, radius }) {
 }
 
 function Map({ selectedId }) {
-  const maxConfirmed = useMemo(
-    () =>
-      cities
-        .map(({ confirmed }) => confirmed)
-        .reduce((acc, current) => (acc > current ? acc : current)),
-    []
-  );
+  const isDesktop = useMediaQuery('(min-width: 990px)');
+  const isTablet = useMediaQuery('(min-width: 700px)');
+  // const getZoom = () => {
+  //   if (isDesktop) {
+  //     return 6
+  //   } else {
+  //     if (isTablet) {
+  //       return 5.5
+  //     } else {
+  //       return 4.5
+  //     }
+  //   }
+  // }
 
-  const minConfirmed = useMemo(
-    () =>
-      cities
-        .map(({ confirmed }) => confirmed)
-        .reduce((acc, current) => (acc < current ? acc : current)),
-    []
-  );
+  const maxConfirmed = cities
+    .map(({ confirmed }) => confirmed)
+    .reduce((acc, current) => (acc > current ? acc : current));
+
+  const minConfirmed = cities
+    .map(({ confirmed }) => confirmed)
+    .reduce((acc, current) => (acc < current ? acc : current));
 
   const getRadius = useCallback(
     confirmed => {
@@ -94,6 +106,8 @@ function Map({ selectedId }) {
     },
     [maxConfirmed, minConfirmed]
   );
+
+  // -2.160768, -84.395987
 
   return (
     <LeafletMap center={[-1.5395, -78.23037]} zoom={7}>
@@ -118,6 +132,23 @@ function Map({ selectedId }) {
       ))}
     </LeafletMap>
   );
+}
+
+function useMediaQuery(mediaQueryString) {
+  const [matches, setMatches] = useState(
+    () => matchMedia(mediaQueryString).matches
+  );
+
+  useLayoutEffect(() => {
+    const mql = matchMedia(mediaQueryString);
+    const listener = e => setMatches(e.matches);
+
+    mql.addListener(listener);
+
+    return () => mql.removeListener(listener);
+  }, [mediaQueryString]);
+
+  return matches;
 }
 
 export default Map;

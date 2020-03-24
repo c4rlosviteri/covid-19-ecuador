@@ -4,48 +4,55 @@ const cities = [
     province: "Guayas",
     id: "guayaquil",
     latlng: [-2.2067, -79.8884],
-    confirmed: 526
+    confirmed: 548
   },
   {
     city: "Samborondón",
     province: "Guayas",
     id: "samborondon",
     latlng: [-2.0908, -79.8779],
-    confirmed: 91
+    confirmed: 96
   },
   {
     city: "Quito",
     province: "Pichincha",
     id: "quito",
     latlng: [-0.1893, -78.4813],
-    confirmed: 63
+    confirmed: 69
   },
   {
     city: "Daule",
     province: "Guayas",
     id: "daule",
     latlng: [-1.8629, -79.978],
-    confirmed: 59
+    confirmed: 64
   },
   {
     city: "Durán",
     province: "Guayas",
     id: "duran",
     latlng: [-2.1701, -79.822],
-    confirmed: 37
+    confirmed: 40
   },
   {
     city: "Milagro",
     province: "Guayas",
     id: "milagro",
     latlng: [-2.1373, -79.5918],
-    confirmed: 33
+    confirmed: 35
   },
   {
     city: "Cuenca",
     province: "Azuay",
     id: "cuenca",
     latlng: [-2.8956, -78.9900],
+    confirmed: 26
+  },
+  {
+    city: "Babahoyo",
+    province: "Los Ríos",
+    id: "babahoyo",
+    latlng: [-1.8003, -79.524],
     confirmed: 22
   },
   {
@@ -53,14 +60,7 @@ const cities = [
     province: "Manabí",
     id: "manta",
     latlng: [-0.9703, -80.7042],
-    confirmed: 20
-  },
-  {
-    city: "Babahoyo",
-    province: "Los Ríos",
-    id: "babahoyo",
-    latlng: [-1.8003, -79.524],
-    confirmed: 20
+    confirmed: 21
   },
   {
     city: "Guaranda",
@@ -98,6 +98,34 @@ const cities = [
     confirmed: 5
   },
   {
+    city: "Portoviejo",
+    province: "Manabí",
+    id: "protoviejo",
+    latlng: [-1.0524, -80.4624],
+    confirmed: 5
+  },
+  {
+    city: "Santa Rosa",
+    province: "El Oro",
+    id: "santa-rosa",
+    latlng: [-3.4573, -79.9647],
+    confirmed: 5
+  },
+  {
+    city: "Machala",
+    province: "El Oro",
+    id: "machala",
+    latlng: [-3.2596, -79.9581],
+    confirmed: 5
+  },
+  {
+    city: "Santa Lucía",
+    province: "Guayas",
+    id: "santa-lucia",
+    latlng: [-1.7146, -79.9841],
+    confirmed: 4
+  },
+  {
     city: "Azogues",
     province: "Cañar",
     id: "Azogues",
@@ -112,24 +140,10 @@ const cities = [
     confirmed: 4
   },
   {
-    city: "Portoviejo",
-    province: "Manabí",
-    id: "protoviejo",
-    latlng: [-1.0524, -80.4624],
-    confirmed: 4
-  },
-  {
-    city: "Santa Rosa",
-    province: "El Oro",
-    id: "santa-rosa",
-    latlng: [-3.4573, -79.9647],
-    confirmed: 4
-  },
-  {
-    city: "Santa Lucía",
+    city: "Yaguachi",
     province: "Guayas",
-    id: "santa-lucia",
-    latlng: [-1.7146, -79.9841],
+    id: "yaguachi",
+    latlng: [-2.0956, -79.6932],
     confirmed: 4
   },
   {
@@ -161,10 +175,24 @@ const cities = [
     confirmed: 3
   },
   {
-    city: "Yaguachi",
-    province: "Guayas",
-    id: "yaguachi",
-    latlng: [-2.0956, -79.6932],
+    city: "Santa Elena",
+    province: "Santa Elena",
+    id: "santa-elena",
+    latlng: [-2.2273, -80.8596],
+    confirmed: 3
+  },
+  {
+    city: "Loja",
+    province: "Loja",
+    id: "loja",
+    latlng: [-4.0031, -79.2085],
+    confirmed: 3
+  },
+  {
+    city: "La Libertad",
+    province: "Santa Elena",
+    id: "la-libertad",
+    latlng: [-2.2313, -80.9000],
     confirmed: 3
   },
   {
@@ -179,20 +207,6 @@ const cities = [
     province: "Los Ríos",
     id: "ventanas",
     latlng: [-1.4479, -79.4620],
-    confirmed: 2
-  },
-  {
-    city: "Santa Elena",
-    province: "Santa Elena",
-    id: "santa-elena",
-    latlng: [-2.2273, -80.8596],
-    confirmed: 2
-  },
-  {
-    city: "Loja",
-    province: "Loja",
-    id: "loja",
-    latlng: [-4.0031, -79.2085],
     confirmed: 2
   },
   {
@@ -217,13 +231,6 @@ const cities = [
     confirmed: 2
   },
   {
-    city: "La Libertad",
-    province: "Santa Elena",
-    id: "la-libertad",
-    latlng: [-2.2313, -80.9000],
-    confirmed: 2
-  },
-  {
     city: "Sucúa",
     province: "Morona Santiago",
     id: "sucua",
@@ -238,10 +245,24 @@ const cities = [
     confirmed: 2
   },
   {
-    city: "Machala",
-    province: "El Oro",
-    id: "machala",
-    latlng: [-3.2596, -79.9581],
+    city: "Santa Isabel",
+    province: "Azuay",
+    id: "santa-isabel",
+    latlng: [-3.2755, -79.3150],
+    confirmed: 2
+  },
+  {
+    city: "El Tambo",
+    province: "Cañar",
+    id: "el-tambo",
+    latlng: [-2.5114, -78.9281],
+    confirmed: 2
+  },
+  {
+    city: "Ambato",
+    province: "Tungurahua",
+    id: "ambato",
+    latlng: [-1.2562, -78.6240],
     confirmed: 2
   },
   {
@@ -249,6 +270,13 @@ const cities = [
     province: "El Oro",
     id: "arenillas",
     latlng: [-3.5552, -80.0683],
+    confirmed: 1
+  },
+  {
+    city: "Atahualpa",
+    province: "El Oro",
+    id: "atahualpa",
+    latlng: [-3.5899, -79.6637],
     confirmed: 1
   },
   {
@@ -277,6 +305,13 @@ const cities = [
     province: "Loja",
     id: "macara",
     latlng: [-4.3772, -79.9419],
+    confirmed: 1
+  },
+  {
+    city: "Catamayo",
+    province: "Loja",
+    id: "catamayo",
+    latlng: [-3.9877, -79.3564],
     confirmed: 1
   },
   {
@@ -329,6 +364,20 @@ const cities = [
     confirmed: 1
   },
   {
+    city: "Montalvo",
+    province: "Los Ríos",
+    id: "montalvo",
+    latlng: [-1.7884, -79.2872],
+    confirmed: 1
+  },
+  {
+    city: "Vinces",
+    province: "Los Ríos",
+    id: "vinces",
+    latlng: [-1.5598, -79.7529],
+    confirmed: 1
+  },
+  {
     city: "Jipijapa",
     province: "Manabí",
     id: "jipijapa",
@@ -343,10 +392,10 @@ const cities = [
     confirmed: 1
   },
   {
-    city: "Santa Isabel",
-    province: "Azuay",
-    id: "santa-isabel",
-    latlng: [-3.2755, -79.3150],
+    city: "Santa Ana",
+    province: "Manabí",
+    id: "santa-ana",
+    latlng: [-1.2071, -80.3712],
     confirmed: 1
   },
   {
@@ -398,13 +447,21 @@ const cities = [
     latlng: [-0.9416, -79.2314],
     confirmed: 1
   },
-  {
-    city: "Ambato",
-    province: "Tungurahua",
-    id: "ambato",
-    latlng: [-1.2562, -78.6240],
-    confirmed: 1
-  }
+  // GALAPAGOS
+  // {
+  //   city: "Santa Cruz",
+  //   province: "Galápagos",
+  //   id: "santa-cruz",
+  //   latlng: [-0.6401, -90.3389],
+  //   confirmed: 1
+  // },
+  // {
+  //   city: "San Cristobal",
+  //   province: "Galápagos",
+  //   id: "san-cristobal",
+  //   latlng: [-0.9045, -89.6080],
+  //   confirmed: 3
+  // }
 ];
 
 export default cities;
