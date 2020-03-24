@@ -21,11 +21,11 @@ export const cases = [
   ["03-21", 532, 522, 7, 3],
   ["03-22", 789, 772, 14, 3],
   ["03-22", 981, 960, 18, 3],
-  ["03-23", 1049, 1019, 27, 3]
+  ["03-23", 1082, 1052, 27, 3]
 ];
 
 export const other = {
-  discarded: 1211,
-  suspicious: 1184,
+  discarded: 1225,
+  suspicious: 1311,
   epidemiologicalFence: 1347
 }

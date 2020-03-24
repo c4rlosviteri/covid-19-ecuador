@@ -71,17 +71,17 @@ function PointMarker({ center, children, isSelected, radius }) {
 function Map({ selectedId }) {
   const isDesktop = useMediaQuery('(min-width: 990px)');
   const isTablet = useMediaQuery('(min-width: 700px)');
-  // const getZoom = () => {
-  //   if (isDesktop) {
-  //     return 6
-  //   } else {
-  //     if (isTablet) {
-  //       return 5.5
-  //     } else {
-  //       return 4.5
-  //     }
-  //   }
-  // }
+  const getZoom = () => {
+    if (isDesktop) {
+      return 6
+    } else {
+      if (isTablet) {
+        return 5.5
+      } else {
+        return 4.5
+      }
+    }
+  }
 
   const maxConfirmed = cities
     .map(({ confirmed }) => confirmed)
@@ -107,10 +107,8 @@ function Map({ selectedId }) {
     [maxConfirmed, minConfirmed]
   );
 
-  // -2.160768, -84.395987
-
   return (
-    <LeafletMap center={[-1.5395, -78.23037]} zoom={7}>
+    <LeafletMap center={[-2.160768, -84.395987]} zoom={getZoom()}>
       <TileLayer updateWhenZooming url="//{s}.tile.osm.org/{z}/{x}/{y}.png" />
       {cities.map(({ confirmed, city, id, latlng, province }) => (
         <PointMarker
