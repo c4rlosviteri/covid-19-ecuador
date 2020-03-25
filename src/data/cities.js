@@ -4,28 +4,28 @@ const cities = [
     province: "Guayas",
     id: "guayaquil",
     latlng: [-2.2067, -79.8884],
-    confirmed: 592
+    confirmed: 611
   },
   {
     city: "Samborondón",
     province: "Guayas",
     id: "samborondon",
     latlng: [-2.0908, -79.8779],
-    confirmed: 99
+    confirmed: 104
   },
   {
     city: "Quito",
     province: "Pichincha",
     id: "quito",
     latlng: [-0.1893, -78.4813],
-    confirmed: 92
+    confirmed: 101
   },
   {
     city: "Daule",
     province: "Guayas",
     id: "daule",
     latlng: [-1.8629, -79.978],
-    confirmed: 66
+    confirmed: 67
   },
   {
     city: "Durán",
@@ -39,7 +39,7 @@ const cities = [
     province: "Guayas",
     id: "milagro",
     latlng: [-2.1373, -79.5918],
-    confirmed: 35
+    confirmed: 36
   },
   {
     city: "Cuenca",
@@ -259,11 +259,18 @@ const cities = [
     confirmed: 2
   },
   {
+    city: "La Troncal",
+    province: "Cañar",
+    id: "la-troncal",
+    latlng: [-2.4236, -79.3426],
+    confirmed: 2
+  },
+  {
     city: "Ambato",
     province: "Tungurahua",
     id: "ambato",
     latlng: [-1.2562, -78.6240],
-    confirmed: 2
+    confirmed: 3
   },
   {
     city: "San Cristobal",
