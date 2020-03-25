@@ -18,7 +18,7 @@ function CasesChart() {
     <>
       <Title>Tendencia</Title>
       <Chart
-        chartType="Line"
+        chartType="AreaChart"
         data={cases}
         height={340}
         loader={<div>Cargando…</div>}
