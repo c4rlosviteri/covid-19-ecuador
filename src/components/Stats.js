@@ -10,7 +10,8 @@ import {
   FaSkullCrossbones,
   FaTimes,
   FaUserCheck,
-  FaSearch
+  FaSearch,
+  FaVial
 } from "react-icons/fa";
 
 import CasesChart from "./CasesChart";
@@ -342,19 +343,15 @@ function Stats({ selectedId, setSelectedId }) {
   const debouncedQuery = useDebounce(query);
   const filteredCities = useCitiesSearch(debouncedQuery);
 
-  const totalConfirmed = useMemo(
-    () =>
-      cities
-        .map(({ confirmed }) => confirmed)
-        .reduce((acc, current) => acc + current),
-    []
-  );
+  const totalConfirmed = cities
+    .map(({ confirmed }) => confirmed)
+    .reduce((acc, current) => acc + current);
 
-  const totalActive = cases[cases.length - 1][2];
+  const totalRecovered = cases[cases.length - 1][3];
 
-  const totalRecovered = cases[cases.length - 1][4];
+  const totalDeaths = cases[cases.length - 1][2];
 
-  const totalDeaths = cases[cases.length - 1][3];
+  const totalActive = totalConfirmed - (totalRecovered + totalDeaths);
 
   return (
     <>
@@ -375,7 +372,7 @@ function Stats({ selectedId, setSelectedId }) {
         <LastUpdate>
           <span>Última actualización COE Nacional</span>
           <span>
-            <FaCalendarAlt aria-hidden="true" /> 2020-03-24 - 17:00{" "}
+            <FaCalendarAlt aria-hidden="true" /> 2020-03-25 - 10:00{" "}
             <FaClock aria-hidden="true" />
           </span>
         </LastUpdate>
@@ -418,10 +415,9 @@ function Stats({ selectedId, setSelectedId }) {
             </strong>
           </GridItem>
           <GridItem>
-            <h2>Cerco epidemiológico</h2>
+            <h2>Muestras</h2>
             <strong>
-              <FaChartLine aria-hidden="true" size={20} />{" "}
-              {other.epidemiologicalFence}
+              <FaVial aria-hidden="true" size={20} /> {other.laboratorySamples}
             </strong>
           </GridItem>
         </StatsGrid>
