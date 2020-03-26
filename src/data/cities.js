@@ -4,7 +4,7 @@ const cities = [
     province: "Guayas",
     id: "guayaquil",
     latlng: [-2.2067, -79.8884],
-    confirmed: 678
+    confirmed: 696
   },
   {
     city: "Samborondón",
@@ -25,14 +25,14 @@ const cities = [
     province: "Guayas",
     id: "daule",
     latlng: [-1.8629, -79.978],
-    confirmed: 76
+    confirmed: 77
   },
   {
     city: "Durán",
     province: "Guayas",
     id: "duran",
     latlng: [-2.1701, -79.822],
-    confirmed: 49
+    confirmed: 50
   },
   {
     city: "Milagro",
@@ -308,6 +308,13 @@ const cities = [
     confirmed: 2
   },
   {
+    city: "Urdaneta",
+    province: "Los Ríos",
+    id: "urdaneta",
+    latlng: [-1.5724, -79.4727],
+    confirmed: 2
+  },
+  {
     city: "Arenillas",
     province: "El Oro",
     id: "arenillas",
@@ -334,13 +341,6 @@ const cities = [
     id: "taisha",
     latlng: [-2.3406, -77.4593],
     confirmed: 1
-  },
-  {
-    city: "Urdaneta",
-    province: "Los Ríos",
-    id: "urdaneta",
-    latlng: [-1.5724, -79.4727],
-    confirmed: 2
   },
   {
     city: "Macará",
@@ -459,7 +459,7 @@ const cities = [
     province: "Guayas",
     id: "balzar",
     latlng: [-1.3641, -79.9023],
-    confirmed: 1
+    confirmed: 2
   },
   {
     city: "Playas",

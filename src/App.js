@@ -16,6 +16,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  *:focus:not(:focus-visible) {
+    outline: none;
+  }
+
   .leaflet-container {
     height: 100vh;
     margin: 0 auto;
