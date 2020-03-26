@@ -372,7 +372,7 @@ function Stats({ selectedId, setSelectedId }) {
         <LastUpdate>
           <span>Última actualización COE Nacional</span>
           <span>
-            <FaCalendarAlt aria-hidden="true" /> 2020-03-25 - 17:00{" "}
+            <FaCalendarAlt aria-hidden="true" /> 2020-03-26 - 10:00{" "}
             <FaClock aria-hidden="true" />
           </span>
         </LastUpdate>
