@@ -69,19 +69,19 @@ function PointMarker({ center, children, isSelected, radius }) {
 }
 
 function Map({ selectedId }) {
-  const isDesktop = useMediaQuery('(min-width: 990px)');
-  const isTablet = useMediaQuery('(min-width: 700px)');
+  const isDesktop = useMediaQuery("(min-width: 990px)");
+  const isTablet = useMediaQuery("(min-width: 700px)");
   const getZoom = () => {
     if (isDesktop) {
-      return 6
+      return 6;
     } else {
       if (isTablet) {
-        return 5.5
+        return 5.5;
       } else {
-        return 4.5
+        return 4.5;
       }
     }
-  }
+  };
 
   const maxConfirmed = cities
     .map(({ confirmed }) => confirmed)

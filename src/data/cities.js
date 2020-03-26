@@ -92,7 +92,7 @@ const cities = [
   },
   {
     city: "Guaranda",
-    province: "Bolivar",
+    province: "Bolívar",
     id: "guaranda",
     latlng: [-1.5908, -78.9990],
     confirmed: 8

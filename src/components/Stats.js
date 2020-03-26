@@ -11,12 +11,33 @@ import {
   FaTimes,
   FaUserCheck,
   FaSearch,
-  FaVial
+  FaVial,
+  FaChevronDown
 } from "react-icons/fa";
 
 import CasesChart from "./CasesChart";
 import { cases, other } from "../data/cases";
-import cities from "../data/cities";
+import citiesData from "../data/cities";
+
+const provinces = citiesData.reduce((acc, item) => {
+  if (!acc[item.province]) {
+    acc[item.province] = [];
+  }
+
+  acc[item.province].push(item);
+
+  return acc;
+}, {});
+
+const sortedProvinces = Object.keys(provinces)
+  .sort()
+  .reduce(
+    (acc, key) => ({
+      ...acc,
+      [key]: provinces[key]
+    }),
+    {}
+  );
 
 const SideBar = styled.section`
   background-color: ${props => props.theme.white};
@@ -30,7 +51,7 @@ const SideBar = styled.section`
     position: absolute;
     right: 0;
     top: 0;
-    transition: transform 500ms ease;
+    transition: transform 500ms;
     z-index: 314159;
   }
 `;
@@ -191,7 +212,10 @@ const GridItem = styled.div`
 
 const CitiesList = styled.ul`
   list-style: none;
-  padding-left: 0;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 
   li {
     @media (max-width: 990px) {
@@ -295,12 +319,12 @@ const InputContainer = styled.div`
   }
 
   .search-icon {
-    ${props => (props.query ? "display: none" : "display: block")};
+    display: ${props => (props.query ? "none" : "block")};
     pointer-events: none;
   }
 
   .clear-icon {
-    ${props => (props.query ? "display: block" : "display: none")};
+    display: ${props => (props.query ? "block" : "none")};
 
     :hover {
       cursor: pointer;
@@ -312,27 +336,101 @@ const InputContainer = styled.div`
   }
 `;
 
-function Cities({ filteredCities, selectedId, setSelectedId }) {
+const ProvinceButton = styled.button`
+  ${props =>
+    props.isOpen ? `box-shadow: 0 2px 4px ${props.theme.shadow};` : ""}
+  appearance: none;
+  background-color: ${props => props.theme.white};
+  border: 1px solid ${props => props.theme.lightGray};
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem;
+  transition: 300ms;
+  width: 100%;
+
+  :hover {
+    cursor: pointer;
+  }
+
+  strong:last-child {
+    align-items: center;
+    display: flex;
+
+    svg {
+      ${props => (props.isOpen ? "transform: scaleY(-1);" : "")}
+      margin-left: 0.5rem;
+      transition: transform 300ms;
+    }
+  }
+
+  & + & {
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+`;
+
+function Province({ cities, name, selectedId, setSelectedId }) {
+  const confirmedByProvince = cities
+    .map(({ confirmed }) => confirmed)
+    .reduce((acc, current) => acc + current, 0);
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const citiesListId = `${name}-cities`;
+
   return (
-    <CitiesList>
-      {filteredCities.length > 0 ? (
-        filteredCities.map(({ confirmed, city, id, province }) => (
-          <li key={id}>
-            <button
-              onClick={() => setSelectedId(selectedId === id ? null : id)}
-            >
-              <span>
-                {city}, {province}
-              </span>
-              <strong>
-                {confirmed} <span className="visually-hidden">Confirmados</span>
-              </strong>
-            </button>
-          </li>
-        ))
-      ) : (
-        <li>No hay resultados…</li>
+    <>
+      <ProvinceButton
+        aria-expanded={isOpen}
+        aria-controls={citiesListId}
+        isOpen={isOpen}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <strong>{name}</strong>
+        <strong>
+          {confirmedByProvince}{" "}
+          <span className="visually-hidden">Confirmados</span>
+          <FaChevronDown aria-hidden="true" />
+        </strong>
+      </ProvinceButton>
+      {isOpen && (
+        <CitiesList id={citiesListId}>
+          {cities.map(({ id, city, confirmed }) => (
+            <li key={id}>
+              <button
+                onClick={() => setSelectedId(selectedId === id ? null : id)}
+              >
+                <span>{city}</span>
+                <strong>
+                  {confirmed}{" "}
+                  <span className="visually-hidden">Confirmados</span>
+                </strong>
+              </button>
+            </li>
+          ))}
+        </CitiesList>
       )}
+    </>
+  );
+}
+
+function Provinces({ filteredProvinces, selectedId, setSelectedId }) {
+  const entries = Object.entries(filteredProvinces);
+
+  return entries.length > 0 ? (
+    entries.map(([province, cities]) => (
+      <Province
+        cities={cities}
+        key={province}
+        name={province}
+        selectedId={selectedId}
+        setSelectedId={setSelectedId}
+      />
+    ))
+  ) : (
+    <CitiesList>
+      <li>No hay resultados…</li>
     </CitiesList>
   );
 }
@@ -341,9 +439,9 @@ function Stats({ selectedId, setSelectedId }) {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const debouncedQuery = useDebounce(query);
-  const filteredCities = useCitiesSearch(debouncedQuery);
+  const filteredProvinces = useProvincesSearch(debouncedQuery);
 
-  const totalConfirmed = cities
+  const totalConfirmed = citiesData
     .map(({ confirmed }) => confirmed)
     .reduce((acc, current) => acc + current);
 
@@ -423,7 +521,7 @@ function Stats({ selectedId, setSelectedId }) {
         </StatsGrid>
         <Separator />
         <InputContainer query={query}>
-          <label htmlFor="search">Buscar ciudad o provincia</label>
+          <label htmlFor="search">Buscar provincia</label>
           <input
             id="search"
             type="text"
@@ -440,8 +538,8 @@ function Stats({ selectedId, setSelectedId }) {
             size={24}
           />
         </InputContainer>
-        <Cities
-          filteredCities={filteredCities}
+        <Provinces
+          filteredProvinces={filteredProvinces}
           selectedId={selectedId}
           setSelectedId={setSelectedId}
         />
@@ -457,21 +555,24 @@ const removeDiacritics = string =>
 
 const normalizeString = string => removeDiacritics(string).toLowerCase();
 
-function useCitiesSearch(query) {
-  const [filteredCities, setFilteredCities] = useState(cities);
+function useProvincesSearch(query) {
+  const [filteredProvinces, setFilteredProvinces] = useState(sortedProvinces);
 
   useMemo(() => {
-    const matches = cities.filter(({ city, province }) => {
-      return (
-        normalizeString(city).includes(normalizeString(query).trim()) ||
-        normalizeString(province).includes(normalizeString(query).trim())
-      );
-    });
+    const matches = Object.keys(sortedProvinces)
+      .filter(key =>
+        normalizeString(key).includes(normalizeString(query).trim())
+      )
+      .reduce((obj, key) => {
+        obj[key] = sortedProvinces[key];
 
-    setFilteredCities(matches);
+        return obj;
+      }, {});
+
+    setFilteredProvinces(matches);
   }, [query]);
 
-  return filteredCities;
+  return filteredProvinces;
 }
 
 function useDebounce(query, delay = 600) {
