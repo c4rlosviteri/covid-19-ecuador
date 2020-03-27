@@ -4,7 +4,7 @@ const cities = [
     province: "Guayas",
     id: "guayaquil",
     latlng: [-2.2067, -79.8884],
-    confirmed: 821
+    confirmed: 837
   },
   {
     city: "Samborondón",
@@ -18,7 +18,7 @@ const cities = [
     province: "Pichincha",
     id: "quito",
     latlng: [-0.1893, -78.4813],
-    confirmed: 125
+    confirmed: 130
   },
   {
     city: "Daule",
@@ -116,7 +116,7 @@ const cities = [
     province: "Guayas",
     id: "salitre",
     latlng: [-1.8300, -79.8165],
-    confirmed: 8
+    confirmed: 10
   },
   {
     city: "Ibarra",
@@ -179,7 +179,7 @@ const cities = [
     province: "Guayas",
     id: "yaguachi",
     latlng: [-2.0956, -79.6932],
-    confirmed: 5
+    confirmed: 8
   },
   {
     city: "Esmeraldas",
@@ -480,14 +480,14 @@ const cities = [
     province: "Guayas",
     id: "balzar",
     latlng: [-1.3641, -79.9023],
-    confirmed: 3
+    confirmed: 4
   },
   {
     city: "Playas",
     province: "Guayas",
     id: "playas",
     latlng: [-2.6326, -80.3893],
-    confirmed: 3
+    confirmed: 8
   },
   {
     city: "Cumandá",
