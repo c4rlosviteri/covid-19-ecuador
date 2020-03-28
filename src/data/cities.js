@@ -4,42 +4,42 @@ const cities = [
     province: "Guayas",
     id: "guayaquil",
     latlng: [-2.2067, -79.8884],
-    confirmed: 837
+    confirmed: 942
   },
   {
     city: "Samborondón",
     province: "Guayas",
     id: "samborondon",
     latlng: [-2.0908, -79.8779],
-    confirmed: 120
+    confirmed: 129
   },
   {
     city: "Quito",
     province: "Pichincha",
     id: "quito",
     latlng: [-0.1893, -78.4813],
-    confirmed: 130
+    confirmed: 152
   },
   {
     city: "Daule",
     province: "Guayas",
     id: "daule",
     latlng: [-1.8629, -79.978],
-    confirmed: 91
+    confirmed: 96
   },
   {
     city: "Durán",
     province: "Guayas",
     id: "duran",
     latlng: [-2.1701, -79.822],
-    confirmed: 54
+    confirmed: 66
   },
   {
     city: "Milagro",
     province: "Guayas",
     id: "milagro",
     latlng: [-2.1373, -79.5918],
-    confirmed: 45
+    confirmed: 48
   },
   {
     city: "Cuenca",
@@ -53,7 +53,7 @@ const cities = [
     province: "Los Ríos",
     id: "babahoyo",
     latlng: [-1.8003, -79.524],
-    confirmed: 30
+    confirmed: 32
   },
   {
     city: "Manta",
@@ -67,7 +67,7 @@ const cities = [
     province: "Sucumbíos",
     id: "lago-agrio",
     latlng: [0.0796, -76.8878],
-    confirmed: 16
+    confirmed: 15
   },
   {
     city: "Quevedo",
@@ -81,7 +81,7 @@ const cities = [
     province: "Manabí",
     id: "protoviejo",
     latlng: [-1.0524, -80.4624],
-    confirmed: 12
+    confirmed: 16
   },
   {
     city: "Azogues",
@@ -109,14 +109,21 @@ const cities = [
     province: "Santo Domingo",
     id: "santo-domingo",
     latlng: [-0.2504, -79.1714],
-    confirmed: 9
+    confirmed: 12
+  },
+  {
+    city: "La Concordia",
+    province: "Santo Domingo",
+    id: "la-concordia",
+    latlng: [0.0062, -79.3921],
+    confirmed: 2
   },
   {
     city: "Salitre",
     province: "Guayas",
     id: "salitre",
     latlng: [-1.8300, -79.8165],
-    confirmed: 10
+    confirmed: 11
   },
   {
     city: "Ibarra",
@@ -130,7 +137,7 @@ const cities = [
     province: "El Oro",
     id: "machala",
     latlng: [-3.2596, -79.9581],
-    confirmed: 7
+    confirmed: 8
   },
   {
     city: "Colta",
@@ -144,7 +151,7 @@ const cities = [
     province: "Pichincha",
     id: "rumiñahui",
     latlng: [-0.3334, -78.4419],
-    confirmed: 6
+    confirmed: 7
   },
   {
     city: "Santa Lucía",
@@ -179,7 +186,7 @@ const cities = [
     province: "Guayas",
     id: "yaguachi",
     latlng: [-2.0956, -79.6932],
-    confirmed: 8
+    confirmed: 9
   },
   {
     city: "Esmeraldas",
@@ -193,14 +200,14 @@ const cities = [
     province: "Loja",
     id: "loja",
     latlng: [-4.0031, -79.2085],
-    confirmed: 6
+    confirmed: 7
   },
   {
     city: "Riobamba",
     province: "Chimborazo",
     id: "riobamba",
     latlng: [-1.67314, -78.6486],
-    confirmed: 4
+    confirmed: 6
   },
   {
     city: "Santa Elena",
@@ -277,7 +284,7 @@ const cities = [
     province: "Cañar",
     id: "la-troncal",
     latlng: [-2.4236, -79.3426],
-    confirmed: 4
+    confirmed: 7
   },
   {
     city: "San Cristobal",
@@ -294,6 +301,13 @@ const cities = [
     confirmed: 2
   },
   {
+    city: "Echeandia",
+    province: "Bolívar",
+    id: "echeandia",
+    latlng: [-1.4318, -79.2795],
+    confirmed: 2
+  },
+  {
     city: "Vinces",
     province: "Los Ríos",
     id: "vinces",
@@ -305,7 +319,7 @@ const cities = [
     province: "Sucumbíos",
     id: "cuyabeno",
     latlng: [-0.3577, -76.4357],
-    confirmed: 2
+    confirmed: 3
   },
   {
     city: "Urdaneta",
@@ -326,6 +340,13 @@ const cities = [
     province: "El Oro",
     id: "atahualpa",
     latlng: [-3.5899, -79.6637],
+    confirmed: 1
+  },
+  {
+    city: "Pasaje",
+    province: "El Oro",
+    id: "pasaje",
+    latlng: [-3.3297, -79.8055],
     confirmed: 1
   },
   {
@@ -396,14 +417,14 @@ const cities = [
     province: "Guayas",
     id: "alfredo-baquerizo-moreno",
     latlng: [-1.8921, -79.5565],
-    confirmed: 1
+    confirmed: 2
   },
   {
     city: "Naranjal",
     province: "Guayas",
     id: "naranjal",
     latlng: [-2.6746, -79.6171],
-    confirmed: 2
+    confirmed: 5
   },
   {
     city: "El Trinfo",
@@ -417,6 +438,27 @@ const cities = [
     province: "Guayas",
     id: "colimes",
     latlng: [-1.5469, -80.0103],
+    confirmed: 1
+  },
+  {
+    city: "Naranjito",
+    province: "Guayas",
+    id: "naranjito",
+    latlng: [-2.1695, -79.4636],
+    confirmed: 1
+  },
+  {
+    city: "Nobol",
+    province: "Guayas",
+    id: "nobol",
+    latlng: [-1.915084, -80.011883],
+    confirmed: 1
+  },
+  {
+    city: "Gral. Antonio Elizalde",
+    province: "Guayas",
+    id: "gral-antonio-elizalde",
+    latlng: [-2.1756, -79.1981],
     confirmed: 1
   },
   {
@@ -497,6 +539,20 @@ const cities = [
     confirmed: 1
   },
   {
+    city: "Guano",
+    province: "Chimborazo",
+    id: "guano",
+    latlng: [-1.6069, -78.6303],
+    confirmed: 1
+  },
+  {
+    city: "Chambo",
+    province: "Chimborazo",
+    id: "chambo",
+    latlng: [-1.7314, -78.5964],
+    confirmed: 1
+  },
+  {
     city: "Cañar",
     province: "Cañar",
     id: "canar",
@@ -550,7 +606,7 @@ const cities = [
     province: "Carchi",
     id: "tulcan",
     latlng: [0.8116, -77.7174],
-    confirmed: 1
+    confirmed: 3
   },
   {
     city: "Montúfar",
@@ -578,7 +634,7 @@ const cities = [
     province: "Pastaza",
     id: "pastaza",
     latlng: [-1.4740, -78.0020],
-    confirmed: 1
+    confirmed: 4
   },
   {
     city: "Mera",
@@ -590,8 +646,15 @@ const cities = [
   {
     city: "Pedro Vicente Maldonado",
     province: "Pichincha",
-    id: "pedro-vicente-maldonaro",
+    id: "pedro-vicente-maldonado",
     latlng: [0.0862, -79.0523],
+    confirmed: 1
+  },
+  {
+    city: "Mejía",
+    province: "Pichincha",
+    id: "mejia",
+    latlng: [-0.5124, -78.5656],
     confirmed: 1
   },
   {
@@ -599,6 +662,13 @@ const cities = [
     province: "Zamora Chinchipe",
     id: "yantzaza",
     latlng: [-3.8269, -78.7609],
+    confirmed: 1
+  },
+  {
+    city: "Orellana",
+    province: "Orellana",
+    id: "orellana",
+    latlng: [-0.7083, -77.1555],
     confirmed: 1
   }
 ];
