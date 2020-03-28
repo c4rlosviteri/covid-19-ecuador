@@ -18,7 +18,7 @@ const cities = [
     province: "Pichincha",
     id: "quito",
     latlng: [-0.1893, -78.4813],
-    confirmed: 152
+    confirmed: 161
   },
   {
     city: "Daule",
@@ -109,7 +109,7 @@ const cities = [
     province: "Santo Domingo",
     id: "santo-domingo",
     latlng: [-0.2504, -79.1714],
-    confirmed: 12
+    confirmed: 13
   },
   {
     city: "La Concordia",
@@ -151,7 +151,7 @@ const cities = [
     province: "Pichincha",
     id: "rumiñahui",
     latlng: [-0.3334, -78.4419],
-    confirmed: 7
+    confirmed: 8
   },
   {
     city: "Santa Lucía",
@@ -571,7 +571,7 @@ const cities = [
     province: "Cotopaxi",
     id: "salcedo",
     latlng: [-1.0404, -78.5907],
-    confirmed: 1
+    confirmed: 2
   },
   {
     city: "Saquisilí",
