@@ -18,14 +18,14 @@ const cities = [
     province: "Pichincha",
     id: "quito",
     latlng: [-0.1893, -78.4813],
-    confirmed: 161
+    confirmed: 176
   },
   {
     city: "Daule",
     province: "Guayas",
     id: "daule",
     latlng: [-1.8629, -79.978],
-    confirmed: 101
+    confirmed: 102
   },
   {
     city: "Durán",
@@ -60,14 +60,14 @@ const cities = [
     province: "Manabí",
     id: "manta",
     latlng: [-0.9703, -80.7042],
-    confirmed: 23
+    confirmed: 25
   },
   {
     city: "Lago Agrio",
     province: "Sucumbíos",
     id: "lago-agrio",
     latlng: [0.0796, -76.8878],
-    confirmed: 15
+    confirmed: 22
   },
   {
     city: "Quevedo",
@@ -81,14 +81,14 @@ const cities = [
     province: "Manabí",
     id: "protoviejo",
     latlng: [-1.0524, -80.4624],
-    confirmed: 17
+    confirmed: 18
   },
   {
     city: "Azogues",
     province: "Cañar",
     id: "Azogues",
     latlng: [-2.7403, -78.8460],
-    confirmed: 10
+    confirmed: 11
   },
   {
     city: "Guaranda",
@@ -151,7 +151,7 @@ const cities = [
     province: "Pichincha",
     id: "ruminahui",
     latlng: [-0.3334, -78.4419],
-    confirmed: 8
+    confirmed: 10
   },
   {
     city: "Santa Lucía",
@@ -193,7 +193,7 @@ const cities = [
     province: "Esmeraldas",
     id: "esmeraldas",
     latlng: [0.9666, -79.6512],
-    confirmed: 4
+    confirmed: 7
   },
   {
     city: "Loja",
@@ -417,7 +417,7 @@ const cities = [
     province: "Manabí",
     id: "montecristi",
     latlng: [-1.0446, -80.6591],
-    confirmed: 1
+    confirmed: 2
   },
   {
     city: "Bolivar",
@@ -634,6 +634,13 @@ const cities = [
     province: "Carchi",
     id: "montufar",
     latlng: [0.5970, -77.8297],
+    confirmed: 1
+  },
+  {
+    city: "San Pedro de Huaca",
+    province: "Carchi",
+    id: "san-pedro-de-huaca",
+    latlng: [0.6322, -77.7259],
     confirmed: 1
   },
   {
