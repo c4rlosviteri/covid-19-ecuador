@@ -27,11 +27,11 @@ export const cases = [
   ["03-27", 1627, 41, 3],
   ["03-28", 1835, 48, 3],
   ["03-29", 1924, 58, 3],
-  ["03-30", 1962, 60, 3]
+  ["03-30", 1966, 62, 54]
 ];
 
 export const other = {
-  discarded: 2223,
-  suspicious: 3083,
-  laboratorySamples: 7268
+  discarded: 2253,
+  suspicious: 3232,
+  laboratorySamples: 7451
 }

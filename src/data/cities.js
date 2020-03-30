@@ -18,7 +18,7 @@ const cities = [
     province: "Pichincha",
     id: "quito",
     latlng: [-0.1893, -78.4813],
-    confirmed: 176
+    confirmed: 179
   },
   {
     city: "Daule",
@@ -32,7 +32,7 @@ const cities = [
     province: "Guayas",
     id: "duran",
     latlng: [-2.1701, -79.822],
-    confirmed: 67
+    confirmed: 68
   },
   {
     city: "Milagro",
