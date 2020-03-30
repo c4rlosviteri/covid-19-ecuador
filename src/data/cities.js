@@ -4,7 +4,7 @@ const cities = [
     province: "Guayas",
     id: "guayaquil",
     latlng: [-2.2067, -79.8884],
-    confirmed: 963
+    confirmed: 978
   },
   {
     city: "Samborondón",
@@ -25,7 +25,7 @@ const cities = [
     province: "Guayas",
     id: "daule",
     latlng: [-1.8629, -79.978],
-    confirmed: 102
+    confirmed: 105
   },
   {
     city: "Durán",
@@ -46,7 +46,7 @@ const cities = [
     province: "Azuay",
     id: "cuenca",
     latlng: [-2.8956, -78.9900],
-    confirmed: 46
+    confirmed: 47
   },
   {
     city: "Babahoyo",
@@ -102,7 +102,7 @@ const cities = [
     province: "El Oro",
     id: "santa-rosa",
     latlng: [-3.4573, -79.9647],
-    confirmed: 8
+    confirmed: 9
   },
   {
     city: "Santo Domingo",
@@ -137,7 +137,7 @@ const cities = [
     province: "El Oro",
     id: "machala",
     latlng: [-3.2596, -79.9581],
-    confirmed: 8
+    confirmed: 9
   },
   {
     city: "Colta",
@@ -186,7 +186,7 @@ const cities = [
     province: "Guayas",
     id: "yaguachi",
     latlng: [-2.0956, -79.6932],
-    confirmed: 9
+    confirmed: 10
   },
   {
     city: "Esmeraldas",
@@ -200,7 +200,7 @@ const cities = [
     province: "Loja",
     id: "loja",
     latlng: [-4.0031, -79.2085],
-    confirmed: 9
+    confirmed: 15
   },
   {
     city: "Riobamba",
@@ -256,7 +256,7 @@ const cities = [
     province: "Cañar",
     id: "el-tambo",
     latlng: [-2.5114, -78.9281],
-    confirmed: 2
+    confirmed: 4
   },
   {
     city: "Biblián",
@@ -284,14 +284,21 @@ const cities = [
     province: "Azuay",
     id: "gualaceo",
     latlng: [-2.8891, -78.7763],
-    confirmed: 2
+    confirmed: 3
   },
   {
     city: "Paute",
     province: "Azuay",
     id: "paute",
     latlng: [-2.7965, -78.7671],
-    confirmed: 2
+    confirmed: 3
+  },
+  {
+    city: "Sigsig",
+    province: "Azuay",
+    id: "sigsig",
+    latlng: [-3.0511, -78.7942],
+    confirmed: 1
   },
   {
     city: "La Troncal",
@@ -361,20 +368,27 @@ const cities = [
     province: "El Oro",
     id: "pasaje",
     latlng: [-3.3297, -79.8055],
-    confirmed: 1
+    confirmed: 2
   },
   {
     city: "El Guabo",
     province: "El Oro",
     id: "el-guabo",
     latlng: [-3.2426, -79.8312],
-    confirmed: 1
+    confirmed: 2
   },
   {
     city: "Zaruma",
     province: "El Oro",
     id: "zaruma",
     latlng: [-3.6914, -79.6110],
+    confirmed: 1
+  },
+  {
+    city: "Piñas",
+    province: "El Oro",
+    id: "pinas",
+    latlng: [-3.680863, -79.682446],
     confirmed: 1
   },
   {
@@ -431,7 +445,7 @@ const cities = [
     province: "Morona Santiago",
     id: "morona",
     latlng: [-2.3062, -78.1191],
-    confirmed: 1
+    confirmed: 2
   },
   {
     city: "Alfredo Baquerizo Moreno",
@@ -690,6 +704,13 @@ const cities = [
     province: "Zamora Chinchipe",
     id: "yantzaza",
     latlng: [-3.8269, -78.7609],
+    confirmed: 1
+  },
+  {
+    city: "Zamora",
+    province: "Zamora Chinchipe",
+    id: "zamora",
+    latlng: [-4.0629, -78.9491],
     confirmed: 1
   },
   {
