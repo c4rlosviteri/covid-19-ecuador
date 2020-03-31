@@ -20,7 +20,7 @@ function CasesChart() {
   useEffect(() => {
     const canvasElement = canvasRef.current;
     const ctx = canvasElement.getContext("2d");
-
+    // eslint-disable-next-line
     let myLineChart = new Chart(ctx, {
       type: "bar",
       data: {
@@ -31,8 +31,6 @@ function CasesChart() {
             data: cases.map(item => item[0]),
             backgroundColor: ["transparent"],
             borderColor: theme.yellow,
-
-            // Changes this dataset to become a line
             type: "line"
           },
           {

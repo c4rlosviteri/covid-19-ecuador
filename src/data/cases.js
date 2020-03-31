@@ -28,7 +28,8 @@ export const cases = [
   [1627, 41, 3],
   [1835, 48, 3],
   [1924, 58, 3],
-  [1966, 62, 54]
+  [1966, 62, 54],
+  [2240, 75, 54]
 ];
 
 export const labels = [
@@ -59,11 +60,12 @@ export const labels = [
   "Mar-27",
   "Mar-28",
   "Mar-29",
-  "Mar-30"
+  "Mar-30",
+  "Mar-31"
 ];
 
 export const other = {
-  discarded: 2253,
-  suspicious: 3232,
-  laboratorySamples: 7451
+  discarded: 2485,
+  suspicious: 3257,
+  laboratorySamples: 7982
 };
