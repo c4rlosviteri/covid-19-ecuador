@@ -4,56 +4,63 @@ const cities = [
     province: "Guayas",
     id: "guayaquil",
     latlng: [-2.2067, -79.8884],
-    confirmed: 1084
+    confirmed: 1116
   },
   {
     city: "Samborondón",
     province: "Guayas",
     id: "samborondon",
     latlng: [-2.0908, -79.8779],
-    confirmed: 145
+    confirmed: 150
   },
   {
     city: "Quito",
     province: "Pichincha",
     id: "quito",
     latlng: [-0.1893, -78.4813],
-    confirmed: 197
+    confirmed: 204
+  },
+  {
+    city: "Pedro Moncayo",
+    province: "Pichincha",
+    id: "pedro-moncayo",
+    latlng: [0.0452, -78.2166],
+    confirmed: 1
   },
   {
     city: "Daule",
     province: "Guayas",
     id: "daule",
     latlng: [-1.8629, -79.978],
-    confirmed: 116
+    confirmed: 117
   },
   {
     city: "Durán",
     province: "Guayas",
     id: "duran",
     latlng: [-2.1701, -79.822],
-    confirmed: 77
+    confirmed: 78
   },
   {
     city: "Milagro",
     province: "Guayas",
     id: "milagro",
     latlng: [-2.1373, -79.5918],
-    confirmed: 53
+    confirmed: 63
   },
   {
     city: "Cuenca",
     province: "Azuay",
     id: "cuenca",
     latlng: [-2.8956, -78.9900],
-    confirmed: 67
+    confirmed: 68
   },
   {
     city: "Babahoyo",
     province: "Los Ríos",
     id: "babahoyo",
     latlng: [-1.8003, -79.524],
-    confirmed: 43
+    confirmed: 44
   },
   {
     city: "Manta",
@@ -123,7 +130,7 @@ const cities = [
     province: "Guayas",
     id: "salitre",
     latlng: [-1.8300, -79.8165],
-    confirmed: 19
+    confirmed: 22
   },
   {
     city: "Ibarra",
@@ -525,7 +532,7 @@ const cities = [
     confirmed: 6
   },
   {
-    city: "El Trinfo",
+    city: "El Triunfo",
     province: "Guayas",
     id: "el-triunfo",
     latlng: [-2.3315, -79.4009],
@@ -550,7 +557,7 @@ const cities = [
     province: "Guayas",
     id: "lomas-de-sargentillo",
     latlng: [-1.8759, -80.0880],
-    confirmed: 2
+    confirmed: 1
   },
   {
     city: "Nobol",
@@ -564,7 +571,7 @@ const cities = [
     province: "Guayas",
     id: "gral-antonio-elizalde",
     latlng: [-2.1756, -79.1981],
-    confirmed: 1
+    confirmed: 2
   },
   {
     city: "Isidro Ayora",
