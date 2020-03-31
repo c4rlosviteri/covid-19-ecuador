@@ -261,7 +261,7 @@ const cities = [
   {
     city: "Biblián",
     province: "Cañar",
-    id: "el-tambo",
+    id: "biblian",
     latlng: [-2.7124, -78.8900],
     confirmed: 3
   },

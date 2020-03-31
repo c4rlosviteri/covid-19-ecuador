@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
-import { Chart } from "react-google-charts";
+import Chart from "chart.js";
 
-import { cases } from "../data/cases";
+import { cases, labels } from "../data/cases";
+import { theme } from "../App";
 
 const Title = styled.h2`
   color: ${props => props.theme.gray};
@@ -14,20 +15,72 @@ const Title = styled.h2`
 `;
 
 function CasesChart() {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvasElement = canvasRef.current;
+    const ctx = canvasElement.getContext("2d");
+
+    let myLineChart = new Chart(ctx, {
+      type: "bar",
+      data: {
+        datasets: [
+          {
+            label: "Total De Casos Confirmados",
+            yAxisID: "B",
+            data: cases.map(item => item[0]),
+            backgroundColor: ["transparent"],
+            borderColor: theme.yellow,
+
+            // Changes this dataset to become a line
+            type: "line"
+          },
+          {
+            label: "Casos Confirmados Por Día",
+            yAxisID: "A",
+            data: cases.map((item, index, array) => {
+              if (index === 0) return item[0];
+              return item[0] - array[index - 1][0];
+            }),
+            backgroundColor: theme.blue
+          },
+          {
+            label: "Muertes Por Día",
+            yAxisID: "A",
+            data: cases.map((item, index, array) => {
+              if (index === 0) return item[1];
+              return item[1] - array[index - 1][1];
+            }),
+            backgroundColor: theme.red
+          }
+        ],
+        labels
+      },
+      options: {
+        scales: {
+          yAxes: [
+            {
+              id: "A",
+              type: "linear",
+              position: "left"
+            },
+            {
+              id: "B",
+              type: "linear",
+              position: "right"
+            }
+          ]
+        }
+      }
+    });
+
+    return () => (myLineChart = null);
+  }, []);
+
   return (
     <>
       <Title>Tendencia</Title>
-      <Chart
-        chartType="AreaChart"
-        data={cases}
-        height={340}
-        loader={<div>Cargando…</div>}
-        options={{
-          isStacked: true,
-          legend: { position: "top", maxLines: 3 }
-        }}
-        width="100%"
-      />
+      <canvas width="400" height="400" ref={canvasRef} />
     </>
   );
 }

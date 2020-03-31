@@ -445,9 +445,9 @@ function Stats({ selectedId, setSelectedId }) {
     .map(({ confirmed }) => confirmed)
     .reduce((acc, current) => acc + current);
 
-  const totalRecovered = cases[cases.length - 1][3];
+  const totalRecovered = cases[cases.length - 1][2];
 
-  const totalDeaths = cases[cases.length - 1][2];
+  const totalDeaths = cases[cases.length - 1][1];
 
   const totalActive = totalConfirmed - (totalRecovered + totalDeaths);
 
@@ -487,7 +487,7 @@ function Stats({ selectedId, setSelectedId }) {
             <span>{((totalActive * 100) / totalConfirmed).toFixed(2)}%</span>
           </GridItem>
           <GridItem>
-            <h2>Recuperados</h2>
+            <h2>Alta Médica</h2>
             <strong>
               <FaNotesMedical aria-hidden="true" size={24} /> {totalRecovered}
             </strong>
