@@ -1,9 +1,9 @@
 {
   "name": "covid-19-ecuador",
   "author": {
-    "name": "Carlos Viteri",
-    "email": "c4rlosviteri@gmail.com",
-    "url": "https://c4rlosviteri.dev"
+    "name": ["Carlos Viteri","Renan Andres Garcia"],
+    "email": ["c4rlosviteri@gmail.com", "andresgarcia17@icloud.com"],
+    "url": "https://covid19-ecuador.com/"
   },
   "version": "0.1.0",
   "private": true,
