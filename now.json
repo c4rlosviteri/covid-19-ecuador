@@ -1,0 +1,8 @@
+{
+  "build": {
+    "env": {
+      "REACT_APP_MAPBOX_TOKEN": "@mapbox-token",
+      "REACT_APP_GOOGLE_ANALYTICS_ID": "@ga-id"
+    }
+  }
+}

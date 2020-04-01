@@ -20,8 +20,8 @@ function CasesChart() {
   useEffect(() => {
     const canvasElement = canvasRef.current;
     const ctx = canvasElement.getContext("2d");
-    // eslint-disable-next-line
-    let myLineChart = new Chart(ctx, {
+
+    new Chart(ctx, {
       type: "bar",
       data: {
         datasets: [
@@ -71,8 +71,6 @@ function CasesChart() {
         }
       }
     });
-
-    return () => (myLineChart = null);
   }, []);
 
   return (

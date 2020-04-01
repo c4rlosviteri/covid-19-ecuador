@@ -1,20 +1,12 @@
-import React, {
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState
-} from "react";
-import {
-  Map as LeafletMap,
-  TileLayer,
-  CircleMarker,
-  Popup
-} from "react-leaflet";
+import React, { useCallback, useLayoutEffect, useState } from "react";
+import MapGL, { Popup, Marker } from "react-map-gl";
+
 import styled from "styled-components";
 
 import { theme } from "../App";
 import cities from "../data/cities";
+
+const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
 const City = styled.h3`
   font-size: 1.125rem;
@@ -27,6 +19,7 @@ const Cases = styled.div`
   font-family: "Source Sans Pro";
   font-size: 1rem;
   gap: 0.25rem;
+  padding: 0.375rem;
 `;
 
 const Confirmed = styled.h4`
@@ -43,41 +36,7 @@ const Confirmed = styled.h4`
   }
 `;
 
-function PointMarker({ center, children, isSelected, radius }) {
-  const markerRef = useRef(null);
-
-  useEffect(() => {
-    if (isSelected) {
-      markerRef.current.leafletElement.openPopup();
-    } else {
-      markerRef.current.leafletElement.closePopup();
-    }
-  }, [isSelected]);
-
-  return (
-    <CircleMarker
-      center={center}
-      color={theme.darkRed}
-      fillColor={theme.darkRed}
-      fillOpacity={0.4}
-      radius={radius}
-      ref={markerRef}
-    >
-      <Popup>{children}</Popup>
-    </CircleMarker>
-  );
-}
-
-function Map({ selectedId }) {
-  const isTablet = useMediaQuery("(min-width: 700px)");
-  const getZoom = () => {
-    if (isTablet) {
-      return 7;
-    } else {
-      return 6;
-    }
-  };
-
+function Pins({ setSelectedCity }) {
   const maxConfirmed = cities
     .map(({ confirmed }) => confirmed)
     .reduce((acc, current) => (acc > current ? acc : current));
@@ -88,7 +47,7 @@ function Map({ selectedId }) {
 
   const getRadius = useCallback(
     confirmed => {
-      const maxRadius = 20;
+      const maxRadius = 16;
       const minRadius = 5;
 
       if (confirmed === maxConfirmed) {
@@ -102,28 +61,90 @@ function Map({ selectedId }) {
     [maxConfirmed, minConfirmed]
   );
 
-  return (
-    <LeafletMap center={[-1.5395, -78.23037]} zoom={getZoom()}>
-      <TileLayer updateWhenZooming url="//{s}.tile.osm.org/{z}/{x}/{y}.png" />
-      {cities.map(({ confirmed, city, id, latlng, province }) => (
-        <PointMarker
-          center={latlng}
-          key={id}
-          isSelected={id === selectedId}
-          radius={getRadius(confirmed)}
+  return cities.map(item => {
+    const radius = getRadius(item.confirmed);
+
+    return (
+      <Marker
+        key={item.id}
+        longitude={item.latlng[1]}
+        latitude={item.latlng[0]}
+      >
+        <svg
+          height={radius * 2}
+          viewBox={`0 0 ${radius * 2} ${radius * 2}`}
+          style={{
+            cursor: "pointer",
+            transform: `translate(${-radius}px,${-radius * 2}px)`
+          }}
+          onClick={() => setSelectedCity(item)}
         >
-          <Cases aria-hidden={id !== selectedId} role="alert">
+          <circle
+            cx={radius}
+            cy={radius}
+            r={radius}
+            fill={theme.darkRed}
+            fillOpacity="0.4"
+            stroke={theme.darkRed}
+            strokeWidth="1"
+          />
+        </svg>
+      </Marker>
+    );
+  });
+}
+
+function Map({ selectedCity, setSelectedCity }) {
+  const isTablet = useMediaQuery("(min-width: 700px)");
+  const getZoom = () => {
+    if (isTablet) return 6;
+    return 5;
+  };
+  const [viewport, setViewport] = useState({
+    latitude: -1.5395,
+    longitude: -78.23037,
+    zoom: getZoom(),
+    bearing: 0,
+    pitch: 0
+  });
+
+  function renderPopup() {
+    return (
+      selectedCity && (
+        <Popup
+          tipSize={5}
+          anchor="top"
+          longitude={selectedCity.latlng[1]}
+          latitude={selectedCity.latlng[0]}
+          closeOnClick={false}
+          onClose={() => setSelectedCity(null)}
+        >
+          <Cases>
             <City>
-              {city}, {province}
+              {selectedCity.city}, {selectedCity.province}
             </City>
             <Confirmed>
               <span>Confirmados</span>
-              <strong>{confirmed}</strong>
+              <strong>{selectedCity.confirmed}</strong>
             </Confirmed>
           </Cases>
-        </PointMarker>
-      ))}
-    </LeafletMap>
+        </Popup>
+      )
+    );
+  }
+
+  return (
+    <MapGL
+      {...viewport}
+      width="100%"
+      height="100vh"
+      mapStyle="mapbox://styles/andro1010/ck8fzxyyd39dd1imwsjqufzu7"
+      onViewportChange={newViewport => setViewport(newViewport)}
+      mapboxApiAccessToken={MAPBOX_TOKEN}
+    >
+      <Pins setSelectedCity={setSelectedCity} />
+      {renderPopup()}
+    </MapGL>
   );
 }
 

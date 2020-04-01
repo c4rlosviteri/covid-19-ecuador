@@ -64,21 +64,18 @@ export const theme = {
   white: "#ffffff"
 };
 
-ReactGA.initialize("UA-115305699-2");
+ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
 ReactGA.pageview("/covid19ecuador");
 
 function App() {
-  const [selectedId, setSelectedId] = useState(null);
+  const [selectedCity, setSelectedCity] = useState(null);
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Container>
-        <Stats
-          selectedId={selectedId}
-          setSelectedId={setSelectedId}
-        />
-        <Map selectedId={selectedId} />
+        <Stats selectedCity={selectedCity} setSelectedCity={setSelectedCity} />
+        <Map selectedCity={selectedCity} setSelectedCity={setSelectedCity} />
       </Container>
     </ThemeProvider>
   );

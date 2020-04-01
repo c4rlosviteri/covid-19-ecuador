@@ -370,7 +370,7 @@ const ProvinceButton = styled.button`
   }
 `;
 
-function Province({ cities, name, selectedId, setSelectedId }) {
+function Province({ cities, name, selectedCity, setSelectedCity }) {
   const confirmedByProvince = cities
     .map(({ confirmed }) => confirmed)
     .reduce((acc, current) => acc + current, 0);
@@ -396,14 +396,16 @@ function Province({ cities, name, selectedId, setSelectedId }) {
       </ProvinceButton>
       {isOpen && (
         <CitiesList id={citiesListId}>
-          {cities.map(({ id, city, confirmed }) => (
-            <li key={id}>
+          {cities.map(item => (
+            <li key={item.id}>
               <button
-                onClick={() => setSelectedId(selectedId === id ? null : id)}
+                onClick={() =>
+                  setSelectedCity(selectedCity === item ? null : item)
+                }
               >
-                <span>{city}</span>
+                <span>{item.city}</span>
                 <strong>
-                  {confirmed}{" "}
+                  {item.confirmed}{" "}
                   <span className="visually-hidden">Confirmados</span>
                 </strong>
               </button>
@@ -415,7 +417,7 @@ function Province({ cities, name, selectedId, setSelectedId }) {
   );
 }
 
-function Provinces({ filteredProvinces, selectedId, setSelectedId }) {
+function Provinces({ filteredProvinces, selectedCity, setSelectedCity }) {
   const entries = Object.entries(filteredProvinces);
 
   return entries.length > 0 ? (
@@ -424,8 +426,8 @@ function Provinces({ filteredProvinces, selectedId, setSelectedId }) {
         cities={cities}
         key={province}
         name={province}
-        selectedId={selectedId}
-        setSelectedId={setSelectedId}
+        selectedCity={selectedCity}
+        setSelectedCity={setSelectedCity}
       />
     ))
   ) : (
@@ -435,7 +437,7 @@ function Provinces({ filteredProvinces, selectedId, setSelectedId }) {
   );
 }
 
-function Stats({ selectedId, setSelectedId }) {
+function Stats({ selectedCity, setSelectedCity }) {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const debouncedQuery = useDebounce(query);
@@ -540,8 +542,8 @@ function Stats({ selectedId, setSelectedId }) {
         </InputContainer>
         <Provinces
           filteredProvinces={filteredProvinces}
-          selectedId={selectedId}
-          setSelectedId={setSelectedId}
+          selectedCity={selectedCity}
+          setSelectedCity={setSelectedCity}
         />
         <Separator />
         <CasesChart />

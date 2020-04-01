@@ -1,8 +1,14 @@
 {
   "name": "covid-19-ecuador",
   "author": {
-    "name": ["Carlos Viteri","Renan Andres Garcia"],
-    "email": ["c4rlosviteri@gmail.com", "andresgarcia17@icloud.com"],
+    "name": [
+      "Carlos Viteri",
+      "Renan Andres Garcia"
+    ],
+    "email": [
+      "c4rlosviteri@gmail.com",
+      "andresgarcia17@icloud.com"
+    ],
     "url": "https://covid19-ecuador.com/"
   },
   "version": "0.1.0",
@@ -12,13 +18,12 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "chart.js": "^2.9.3",
-    "leaflet": "^1.6.0",
     "normalize.css": "^8.0.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-ga": "^2.7.0",
     "react-icons": "^3.9.0",
-    "react-leaflet": "^2.6.3",
+    "react-map-gl": "^5.2.3",
     "react-scripts": "3.4.0",
     "styled-components": "^5.0.1"
   },
