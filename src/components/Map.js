@@ -48,7 +48,7 @@ function Pins({ setSelectedCity }) {
   const getRadius = useCallback(
     confirmed => {
       const maxRadius = 16;
-      const minRadius = 5;
+      const minRadius = 3;
 
       if (confirmed === maxConfirmed) {
         return maxRadius;
@@ -72,16 +72,16 @@ function Pins({ setSelectedCity }) {
       >
         <svg
           height={radius * 2}
-          viewBox={`0 0 ${radius * 2} ${radius * 2}`}
+          viewBox={`0 0 ${radius * 2 + 2} ${radius * 2 + 2}`}
           style={{
             cursor: "pointer",
-            transform: `translate(${-radius}px,${-radius * 2}px)`
+            transform: `translate(${-radius}px, ${-radius * 2}px)`
           }}
           onClick={() => setSelectedCity(item)}
         >
           <circle
-            cx={radius}
-            cy={radius}
+            cx={radius + 1}
+            cy={radius + 1}
             r={radius}
             fill={theme.darkRed}
             fillOpacity="0.4"
