@@ -4,21 +4,21 @@ const cities = [
     province: "Guayas",
     id: "guayaquil",
     latlng: [-2.2067, -79.8884],
-    confirmed: 1301
+    confirmed: 1304
   },
   {
     city: "Samborondón",
     province: "Guayas",
     id: "samborondon",
     latlng: [-2.0908, -79.8779],
-    confirmed: 164
+    confirmed: 165
   },
   {
     city: "Quito",
     province: "Pichincha",
     id: "quito",
     latlng: [-0.1893, -78.4813],
-    confirmed: 225
+    confirmed: 228
   },
   {
     city: "Pedro Moncayo",
@@ -151,7 +151,7 @@ const cities = [
     province: "Chimborazo",
     id: "colta",
     latlng: [-1.7365, -78.7613],
-    confirmed: 6
+    confirmed: 7
   },
   {
     city: "Rumiñahui",
@@ -228,7 +228,7 @@ const cities = [
     province: "Loja",
     id: "loja",
     latlng: [-4.0031, -79.2085],
-    confirmed: 19
+    confirmed: 20
   },
   {
     city: "Riobamba",
@@ -746,7 +746,7 @@ const cities = [
     province: "Cotopaxi",
     id: "latacunga",
     latlng: [-0.935, -78.6191],
-    confirmed: 4
+    confirmed: 5
   },
   {
     city: "Santa Cruz",
