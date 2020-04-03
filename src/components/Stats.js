@@ -472,7 +472,7 @@ function Stats({ selectedCity, setSelectedCity }) {
         <LastUpdate>
           <span>Última actualización COE Nacional</span>
           <span>
-            <FaCalendarAlt aria-hidden="true" /> 2020-04-02 - 11:00{" "}
+            <FaCalendarAlt aria-hidden="true" /> 2020-04-03 - 11:00{" "}
             <FaClock aria-hidden="true" />
           </span>
         </LastUpdate>
@@ -489,7 +489,7 @@ function Stats({ selectedCity, setSelectedCity }) {
             <span>{((totalActive * 100) / totalConfirmed).toFixed(2)}%</span>
           </GridItem>
           <GridItem>
-            <h2>Alta Médica</h2>
+            <h2>Alta Clínica</h2>
             <strong>
               <FaNotesMedical aria-hidden="true" size={24} /> {totalRecovered}
             </strong>
