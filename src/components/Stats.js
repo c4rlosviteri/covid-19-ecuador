@@ -472,7 +472,7 @@ function Stats({ selectedCity, setSelectedCity }) {
         <LastUpdate>
           <span>Última actualización COE Nacional</span>
           <span>
-            <FaCalendarAlt aria-hidden="true" /> 2020-04-03 - 11:00{" "}
+            <FaCalendarAlt aria-hidden="true" /> 2020-04-04 - 11:00{" "}
             <FaClock aria-hidden="true" />
           </span>
         </LastUpdate>
