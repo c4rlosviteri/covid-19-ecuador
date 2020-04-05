@@ -33,7 +33,8 @@ export const cases = [
   [2758, 98, 58],
   [3163, 120, 65],
   [3368, 145, 71],
-  [3465, 172, 100]
+  [3465, 172, 100],
+  [3646, 180, 100]
 ];
 
 export const labels = [
@@ -69,11 +70,12 @@ export const labels = [
   "2020-04-01",
   "2020-04-02",
   "2020-04-03",
-  "2020-04-04"
+  "2020-04-04",
+  "2020-04-05"
 ];
 
 export const other = {
-  discarded: 3369,
-  suspicious: 4475,
-  laboratorySamples: 11309
+  discarded: 3603,
+  suspicious: 5137,
+  laboratorySamples: 12386
 };
