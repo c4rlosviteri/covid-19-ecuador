@@ -43,7 +43,7 @@ i18next.init({
         trend: "Tendencia",
         dailyConfirmedCases: "Casos confirmados por día",
         dailyDeaths: "Muertes por día",
-        confirmed: "confirmed",
+        confirmed: "Confirmados",
         noResults: "No hay resultados…",
         selectLanguage: "Select Language:"
       },
