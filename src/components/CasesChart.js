@@ -4,9 +4,10 @@ import Chart from "chart.js";
 
 import { cases, labels } from "../data/cases";
 import { theme } from "../App";
+import i18next from "../i18next";
 
 const Title = styled.h2`
-  color: ${props => props.theme.gray};
+  color: ${(props) => props.theme.gray};
   font-size: 1rem;
   margin-bottom: 2rem;
   margin-top: 0;
@@ -14,7 +15,7 @@ const Title = styled.h2`
   text-transform: uppercase;
 `;
 
-function CasesChart() {
+function CasesChart({ language }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -26,33 +27,33 @@ function CasesChart() {
       data: {
         datasets: [
           {
-            label: "Total De Casos Confirmados",
+            label: i18next.t("confirmedCases", { lng: language }),
             yAxisID: "B",
-            data: cases.map(item => item[0]),
+            data: cases.map((item) => item[0]),
             backgroundColor: ["transparent"],
             borderColor: theme.yellow,
-            type: "line"
+            type: "line",
           },
           {
-            label: "Casos Confirmados Por Día",
+            label: i18next.t("dailyConfirmedCases", { lng: language }),
             yAxisID: "A",
             data: cases.map((item, index, array) => {
               if (index === 0) return item[0];
               return item[0] - array[index - 1][0];
             }),
-            backgroundColor: theme.blue
+            backgroundColor: theme.blue,
           },
           {
-            label: "Muertes Por Día",
+            label: i18next.t("dailyDeaths", { lng: language }),
             yAxisID: "A",
             data: cases.map((item, index, array) => {
               if (index === 0) return item[1];
               return item[1] - array[index - 1][1];
             }),
-            backgroundColor: theme.red
-          }
+            backgroundColor: theme.red,
+          },
         ],
-        labels
+        labels,
       },
       options: {
         scales: {
@@ -60,22 +61,22 @@ function CasesChart() {
             {
               id: "A",
               type: "linear",
-              position: "left"
+              position: "left",
             },
             {
               id: "B",
               type: "linear",
-              position: "right"
-            }
-          ]
-        }
-      }
+              position: "right",
+            },
+          ],
+        },
+      },
     });
-  }, []);
+  }, [language]);
 
   return (
     <>
-      <Title>Tendencia</Title>
+      <Title>{i18next.t("trend", { lng: language })}</Title>
       <canvas width="400" height="400" ref={canvasRef} />
     </>
   );

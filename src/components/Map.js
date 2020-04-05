@@ -1,10 +1,10 @@
 import React, { useCallback, useLayoutEffect, useState } from "react";
 import MapGL, { Popup, Marker } from "react-map-gl";
-
 import styled from "styled-components";
 
 import { theme } from "../App";
 import cities from "../data/cities";
+import i18next from "../i18next";
 
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
@@ -23,7 +23,7 @@ const Cases = styled.div`
 `;
 
 const Confirmed = styled.h4`
-  color: ${props => props.theme.red};
+  color: ${(props) => props.theme.red};
   display: grid;
   font-weight: 700;
   grid-template-columns: auto max-content;
@@ -31,7 +31,7 @@ const Confirmed = styled.h4`
   margin: 0;
 
   strong {
-    color: ${props => props.theme.gray};
+    color: ${(props) => props.theme.gray};
     font-weight: 700;
   }
 `;
@@ -46,7 +46,7 @@ function Pins({ setSelectedCity }) {
     .reduce((acc, current) => (acc < current ? acc : current));
 
   const getRadius = useCallback(
-    confirmed => {
+    (confirmed) => {
       const maxRadius = 16;
       const minRadius = 3;
 
@@ -61,7 +61,7 @@ function Pins({ setSelectedCity }) {
     [maxConfirmed, minConfirmed]
   );
 
-  return cities.map(item => {
+  return cities.map((item) => {
     const radius = getRadius(item.confirmed);
 
     return (
@@ -75,7 +75,7 @@ function Pins({ setSelectedCity }) {
           viewBox={`0 0 ${radius * 2 + 2} ${radius * 2 + 2}`}
           style={{
             cursor: "pointer",
-            transform: `translate(${-radius}px, ${-radius * 2}px)`
+            transform: `translate(${-radius}px, ${-radius * 2}px)`,
           }}
           onClick={() => setSelectedCity(item)}
         >
@@ -94,7 +94,7 @@ function Pins({ setSelectedCity }) {
   });
 }
 
-function Map({ selectedCity, setSelectedCity }) {
+function Map({ selectedCity, setSelectedCity, language }) {
   const isTablet = useMediaQuery("(min-width: 700px)");
   const getZoom = () => {
     if (isTablet) return 6;
@@ -105,7 +105,7 @@ function Map({ selectedCity, setSelectedCity }) {
     longitude: -78.23037,
     zoom: getZoom(),
     bearing: 0,
-    pitch: 0
+    pitch: 0,
   });
 
   function renderPopup() {
@@ -124,7 +124,7 @@ function Map({ selectedCity, setSelectedCity }) {
               {selectedCity.city}, {selectedCity.province}
             </City>
             <Confirmed>
-              <span>Confirmados</span>
+              <span>{i18next.t("confirmed", { lng: language })}</span>
               <strong>{selectedCity.confirmed}</strong>
             </Confirmed>
           </Cases>
@@ -139,7 +139,7 @@ function Map({ selectedCity, setSelectedCity }) {
       width="100%"
       height="100vh"
       mapStyle="mapbox://styles/andro1010/ck8fzxyyd39dd1imwsjqufzu7"
-      onViewportChange={newViewport => setViewport(newViewport)}
+      onViewportChange={(newViewport) => setViewport(newViewport)}
       mapboxApiAccessToken={MAPBOX_TOKEN}
     >
       <Pins setSelectedCity={setSelectedCity} />
@@ -155,7 +155,7 @@ function useMediaQuery(mediaQueryString) {
 
   useLayoutEffect(() => {
     const mql = matchMedia(mediaQueryString);
-    const listener = e => setMatches(e.matches);
+    const listener = (e) => setMatches(e.matches);
 
     mql.addListener(listener);
 

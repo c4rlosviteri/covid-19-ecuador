@@ -7,7 +7,7 @@ import Stats from "./components/Stats";
 
 const GlobalStyle = createGlobalStyle`
   body {
-    color: ${props => props.theme.gray};
+    color: ${(props) => props.theme.gray};
     font-family: 'Source Sans Pro';
     overflow-y: hidden;
   }
@@ -61,7 +61,7 @@ export const theme = {
   red: "#c02739",
   shadow: "rgba(0, 0, 0, 0.3)",
   yellow: "#ffd369",
-  white: "#ffffff"
+  white: "#ffffff",
 };
 
 ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
@@ -69,13 +69,23 @@ ReactGA.pageview("/covid19ecuador");
 
 function App() {
   const [selectedCity, setSelectedCity] = useState(null);
+  const [language, setLanguage] = useState("es");
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Container>
-        <Stats selectedCity={selectedCity} setSelectedCity={setSelectedCity} />
-        <Map selectedCity={selectedCity} setSelectedCity={setSelectedCity} />
+        <Stats
+          language={language}
+          setLanguage={setLanguage}
+          selectedCity={selectedCity}
+          setSelectedCity={setSelectedCity}
+        />
+        <Map
+          language={language}
+          selectedCity={selectedCity}
+          setSelectedCity={setSelectedCity}
+        />
       </Container>
     </ThemeProvider>
   );

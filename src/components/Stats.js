@@ -12,12 +12,13 @@ import {
   FaUserCheck,
   FaSearch,
   FaVial,
-  FaChevronDown
+  FaChevronDown,
 } from "react-icons/fa";
 
 import CasesChart from "./CasesChart";
 import { cases, other } from "../data/cases";
 import citiesData from "../data/cities";
+import i18next from "../i18next";
 
 const provinces = citiesData.reduce((acc, item) => {
   if (!acc[item.province]) {
@@ -34,19 +35,40 @@ const sortedProvinces = Object.keys(provinces)
   .reduce(
     (acc, key) => ({
       ...acc,
-      [key]: provinces[key]
+      [key]: provinces[key],
     }),
     {}
   );
 
+const SelectContainer = styled.div`
+  align-items: center; 
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+
+  select {
+    appearance: none;
+    padding: 0.5rem 0.75rem;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  label {
+    font-weight: 600;
+    margin-right: 0.5rem;
+  }
+`;
+
 const SideBar = styled.section`
-  background-color: ${props => props.theme.white};
+  background-color: ${(props) => props.theme.white};
   height: 100vh;
   overflow-y: auto;
   padding: 1.25rem;
 
   @media (max-width: 990px) {
-    ${props => (props.open ? "" : "transform: translateX(-100%);")}
+    ${(props) => (props.open ? "" : "transform: translateX(-100%);")}
     left: 0;
     position: absolute;
     right: 0;
@@ -59,11 +81,11 @@ const SideBar = styled.section`
 const OpenStats = styled.button`
   align-items: center;
   appearance: none;
-  background-color: ${props => props.theme.white};
+  background-color: ${(props) => props.theme.white};
   border: 0;
   border-radius: 3px;
-  box-shadow: 0 2px 4px ${props => props.theme.shadow};
-  color: ${props => props.theme.black};
+  box-shadow: 0 2px 4px ${(props) => props.theme.shadow};
+  color: ${(props) => props.theme.black};
   display: flex;
   font-weight: 700;
   height: 44px;
@@ -85,7 +107,7 @@ const OpenStats = styled.button`
 
 const CloseStats = styled(OpenStats)`
   box-shadow: none;
-  border: 1px solid ${props => props.theme.lightGray};
+  border: 1px solid ${(props) => props.theme.lightGray};
 
   svg {
     margin-left: 0;
@@ -93,7 +115,7 @@ const CloseStats = styled(OpenStats)`
 `;
 
 const MainTitle = styled.h1`
-  color: ${props => props.theme.black};
+  color: ${(props) => props.theme.black};
   font-size: 1.25rem;
   margin-bottom: 1.5rem;
   margin-top: 0;
@@ -109,14 +131,14 @@ const Confirmed = styled.div`
   text-align: center;
 
   h2 {
-    color: ${props => props.theme.gray};
+    color: ${(props) => props.theme.gray};
     font-size: 1rem;
     margin: 0;
     text-transform: uppercase;
   }
 
   strong {
-    color: ${props => props.theme.red};
+    color: ${(props) => props.theme.red};
     font-size: 3.5rem;
     font-weight: 700;
   }
@@ -138,7 +160,7 @@ const GridItem = styled.div`
   text-align: center;
 
   h2 {
-    color: ${props => props.theme.gray};
+    color: ${(props) => props.theme.gray};
     font-size: 1rem;
     margin: 0;
     text-transform: uppercase;
@@ -158,24 +180,24 @@ const GridItem = styled.div`
   }
 
   span {
-    color: ${props => props.theme.gray};
+    color: ${(props) => props.theme.gray};
   }
 
   &:nth-of-type(1) {
     strong {
-      color: ${props => props.theme.orange};
+      color: ${(props) => props.theme.orange};
     }
   }
 
   &:nth-of-type(2) {
     strong {
-      color: ${props => props.theme.green};
+      color: ${(props) => props.theme.green};
     }
   }
 
   &:nth-of-type(3) {
     strong {
-      color: ${props => props.theme.black};
+      color: ${(props) => props.theme.black};
     }
   }
 
@@ -193,19 +215,19 @@ const GridItem = styled.div`
 
   &:nth-of-type(4) {
     strong {
-      color: ${props => props.theme.blue};
+      color: ${(props) => props.theme.blue};
     }
   }
 
   &:nth-of-type(5) {
     strong {
-      color: ${props => props.theme.yellow};
+      color: ${(props) => props.theme.yellow};
     }
   }
 
   &:nth-of-type(6) {
     strong {
-      color: ${props => props.theme.purple};
+      color: ${(props) => props.theme.purple};
     }
   }
 `;
@@ -226,7 +248,7 @@ const CitiesList = styled.ul`
 
   li + li {
     @media (max-width: 990px) {
-      border-top: 1px solid ${props => props.theme.lightGray};
+      border-top: 1px solid ${(props) => props.theme.lightGray};
     }
 
     @media (min-width: 990px) {
@@ -236,8 +258,8 @@ const CitiesList = styled.ul`
 
   button {
     appearance: none;
-    background-color: ${props => props.theme.white};
-    border: 1px solid ${props => props.theme.lightGray};
+    background-color: ${(props) => props.theme.white};
+    border: 1px solid ${(props) => props.theme.lightGray};
     border-radius: 3px;
     display: flex;
     justify-content: space-between;
@@ -257,9 +279,9 @@ const CitiesList = styled.ul`
 `;
 
 const Separator = styled.hr`
-  background-color: ${props => props.theme.lightGray};
+  background-color: ${(props) => props.theme.lightGray};
   border: 0;
-  color: ${props => props.theme.lightGray};
+  color: ${(props) => props.theme.lightGray};
   height: 1px;
   margin-bottom: 1.5em;
   margin-top: 1.5em;
@@ -267,7 +289,7 @@ const Separator = styled.hr`
 
 const LastUpdate = styled.p`
   align-items: center;
-  color: ${props => props.theme.gray};
+  color: ${(props) => props.theme.gray};
   display: flex;
   flex-direction: column;
   font-size: 0.875rem;
@@ -295,7 +317,7 @@ const InputContainer = styled.div`
   position: relative;
 
   label {
-    color: ${props => props.theme.gray};
+    color: ${(props) => props.theme.gray};
     display: inline-block;
     font-size: 0.875rem;
     font-weight: 700;
@@ -304,7 +326,7 @@ const InputContainer = styled.div`
   }
 
   input {
-    border: 1px solid ${props => props.theme.lightGray};
+    border: 1px solid ${(props) => props.theme.lightGray};
     border-radius: 3px;
     padding: 0.75rem 3rem 0.75rem 0.75rem;
     width: 100%;
@@ -319,12 +341,12 @@ const InputContainer = styled.div`
   }
 
   .search-icon {
-    display: ${props => (props.query ? "none" : "block")};
+    display: ${(props) => (props.query ? "none" : "block")};
     pointer-events: none;
   }
 
   .clear-icon {
-    display: ${props => (props.query ? "block" : "none")};
+    display: ${(props) => (props.query ? "block" : "none")};
 
     :hover {
       cursor: pointer;
@@ -332,16 +354,16 @@ const InputContainer = styled.div`
   }
 
   svg {
-    color: ${props => props.theme.blue};
+    color: ${(props) => props.theme.blue};
   }
 `;
 
 const ProvinceButton = styled.button`
-  ${props =>
+  ${(props) =>
     props.isOpen ? `box-shadow: 0 2px 4px ${props.theme.shadow};` : ""}
   appearance: none;
-  background-color: ${props => props.theme.white};
-  border: 1px solid ${props => props.theme.lightGray};
+  background-color: ${(props) => props.theme.white};
+  border: 1px solid ${(props) => props.theme.lightGray};
   border-radius: 3px;
   display: flex;
   justify-content: space-between;
@@ -358,7 +380,7 @@ const ProvinceButton = styled.button`
     display: flex;
 
     svg {
-      ${props => (props.isOpen ? "transform: scaleY(-1);" : "")}
+      ${(props) => (props.isOpen ? "transform: scaleY(-1);" : "")}
       margin-left: 0.5rem;
       transition: transform 300ms;
     }
@@ -370,7 +392,7 @@ const ProvinceButton = styled.button`
   }
 `;
 
-function Province({ cities, name, selectedCity, setSelectedCity }) {
+function Province({ cities, name, selectedCity, setSelectedCity, language }) {
   const confirmedByProvince = cities
     .map(({ confirmed }) => confirmed)
     .reduce((acc, current) => acc + current, 0);
@@ -390,13 +412,15 @@ function Province({ cities, name, selectedCity, setSelectedCity }) {
         <strong>{name}</strong>
         <strong>
           {confirmedByProvince}{" "}
-          <span className="visually-hidden">Confirmados</span>
+          <span className="visually-hidden">
+            {i18next.t("confirmed", { lng: language })}
+          </span>
           <FaChevronDown aria-hidden="true" />
         </strong>
       </ProvinceButton>
       {isOpen && (
         <CitiesList id={citiesListId}>
-          {cities.map(item => (
+          {cities.map((item) => (
             <li key={item.id}>
               <button
                 onClick={() =>
@@ -406,7 +430,9 @@ function Province({ cities, name, selectedCity, setSelectedCity }) {
                 <span>{item.city}</span>
                 <strong>
                   {item.confirmed}{" "}
-                  <span className="visually-hidden">Confirmados</span>
+                  <span className="visually-hidden">
+                    {i18next.t("confirmed", { lng: language })}
+                  </span>
                 </strong>
               </button>
             </li>
@@ -417,7 +443,12 @@ function Province({ cities, name, selectedCity, setSelectedCity }) {
   );
 }
 
-function Provinces({ filteredProvinces, selectedCity, setSelectedCity }) {
+function Provinces({
+  filteredProvinces,
+  selectedCity,
+  setSelectedCity,
+  language,
+}) {
   const entries = Object.entries(filteredProvinces);
 
   return entries.length > 0 ? (
@@ -428,16 +459,17 @@ function Provinces({ filteredProvinces, selectedCity, setSelectedCity }) {
         name={province}
         selectedCity={selectedCity}
         setSelectedCity={setSelectedCity}
+        language={language}
       />
     ))
   ) : (
     <CitiesList>
-      <li>No hay resultados…</li>
+      <li>{i18next.t("noResults", { lng: language })}</li>
     </CitiesList>
   );
 }
 
-function Stats({ selectedCity, setSelectedCity }) {
+function Stats({ selectedCity, setSelectedCity, language, setLanguage }) {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const debouncedQuery = useDebounce(query);
@@ -456,7 +488,7 @@ function Stats({ selectedCity, setSelectedCity }) {
   return (
     <>
       <OpenStats onClick={() => setIsOpen(true)}>
-        Mostrar Datos
+        {i18next.t("showData", { lng: language })}
         <FaChartLine aria-hidden="true" />
       </OpenStats>
       <SideBar open={isOpen}>
@@ -469,53 +501,72 @@ function Stats({ selectedCity, setSelectedCity }) {
             🇪🇨
           </span>
         </MainTitle>
+        <SelectContainer>
+          <label htmlFor="language-selector">
+            {i18next.t("selectLanguage", { lng: language })}
+          </label>
+          <select
+            id="language-selector"
+            onChange={(e) => setLanguage(e.target.value)}
+            value={language}
+          >
+            {[
+              { value: "es", label: "🇪🇨 Español" },
+              { value: "en", label: "🇺🇸 English" },
+            ].map(({ value, label }) => (
+              <option value={value} key={value}>
+                {label}
+              </option>
+            ))}
+          </select>
+        </SelectContainer>
         <LastUpdate>
-          <span>Última actualización COE Nacional</span>
+          <span>{i18next.t("lastUpdate", { lng: language })}</span>
           <span>
             <FaCalendarAlt aria-hidden="true" /> 2020-04-04 - 11:00{" "}
             <FaClock aria-hidden="true" />
           </span>
         </LastUpdate>
         <Confirmed>
-          <h2>Total de casos confirmados</h2>
+          <h2>{i18next.t("confirmedCases", { lng: language })}</h2>
           <strong>{totalConfirmed}</strong>
         </Confirmed>
         <StatsGrid>
           <GridItem>
-            <h2>Activos</h2>
+            <h2>{i18next.t("activeCases", { lng: language })}</h2>
             <strong>
               <FaBiohazard aria-hidden="true" size={24} /> {totalActive}
             </strong>
             <span>{((totalActive * 100) / totalConfirmed).toFixed(2)}%</span>
           </GridItem>
           <GridItem>
-            <h2>Alta Clínica</h2>
+            <h2>{i18next.t("hospitalDischarge", { lng: language })}</h2>
             <strong>
               <FaNotesMedical aria-hidden="true" size={24} /> {totalRecovered}
             </strong>
             <span>{((totalRecovered * 100) / totalConfirmed).toFixed(2)}%</span>
           </GridItem>
           <GridItem>
-            <h2>Fallecidos</h2>
+            <h2>{i18next.t("deaths", { lng: language })}</h2>
             <strong>
               <FaSkullCrossbones aria-hidden="true" size={24} /> {totalDeaths}
             </strong>
             <span>{((totalDeaths * 100) / totalConfirmed).toFixed(2)}%</span>
           </GridItem>
           <GridItem>
-            <h2>Descartados</h2>
+            <h2>{i18next.t("discarted", { lng: language })}</h2>
             <strong>
               <FaUserCheck aria-hidden="true" size={20} /> {other.discarded}
             </strong>
           </GridItem>
           <GridItem>
-            <h2>Sospechosos</h2>
+            <h2>{i18next.t("suspicious", { lng: language })}</h2>
             <strong>
               <FaMicroscope aria-hidden="true" size={20} /> {other.suspicious}
             </strong>
           </GridItem>
           <GridItem>
-            <h2>Muestras</h2>
+            <h2>{i18next.t("samples", { lng: language })}</h2>
             <strong>
               <FaVial aria-hidden="true" size={20} /> {other.laboratorySamples}
             </strong>
@@ -523,12 +574,14 @@ function Stats({ selectedCity, setSelectedCity }) {
         </StatsGrid>
         <Separator />
         <InputContainer query={query}>
-          <label htmlFor="search">Buscar provincia</label>
+          <label htmlFor="search">
+            {i18next.t("searchProvince", { lng: language })}
+          </label>
           <input
             id="search"
             type="text"
-            onChange={e => setQuery(e.target.value)}
-            placeholder="Buscar…"
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder={i18next.t("search", { lng: language })}
             value={query}
           />
           <FaSearch aria-hidden="true" className="search-icon" size={24} />
@@ -541,28 +594,29 @@ function Stats({ selectedCity, setSelectedCity }) {
           />
         </InputContainer>
         <Provinces
+          language={language}
           filteredProvinces={filteredProvinces}
           selectedCity={selectedCity}
           setSelectedCity={setSelectedCity}
         />
         <Separator />
-        <CasesChart />
+        <CasesChart language={language} />
       </SideBar>
     </>
   );
 }
 
-const removeDiacritics = string =>
+const removeDiacritics = (string) =>
   string.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-const normalizeString = string => removeDiacritics(string).toLowerCase();
+const normalizeString = (string) => removeDiacritics(string).toLowerCase();
 
 function useProvincesSearch(query) {
   const [filteredProvinces, setFilteredProvinces] = useState(sortedProvinces);
 
   useMemo(() => {
     const matches = Object.keys(sortedProvinces)
-      .filter(key =>
+      .filter((key) =>
         normalizeString(key).includes(normalizeString(query).trim())
       )
       .reduce((obj, key) => {
