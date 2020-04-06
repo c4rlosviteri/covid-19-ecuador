@@ -41,13 +41,14 @@ const sortedProvinces = Object.keys(provinces)
   );
 
 const SelectContainer = styled.div`
-  align-items: center; 
+  align-items: center;
   display: flex;
   justify-content: center;
   margin-bottom: 1.5rem;
 
   select {
     appearance: none;
+    background-color: ${(props) => props.theme.white};
     padding: 0.5rem 0.75rem;
 
     :hover {
@@ -523,7 +524,7 @@ function Stats({ selectedCity, setSelectedCity, language, setLanguage }) {
         <LastUpdate>
           <span>{i18next.t("lastUpdate", { lng: language })}</span>
           <span>
-            <FaCalendarAlt aria-hidden="true" /> 2020-04-05 - 11:00{" "}
+            <FaCalendarAlt aria-hidden="true" /> 2020-04-06 - 10:00{" "}
             <FaClock aria-hidden="true" />
           </span>
         </LastUpdate>
