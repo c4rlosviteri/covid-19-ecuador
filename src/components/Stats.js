@@ -20,15 +20,17 @@ import { cases, other } from "../data/cases";
 import citiesData from "../data/cities";
 import i18next from "../i18next";
 
-const provinces = citiesData.reduce((acc, item) => {
-  if (!acc[item.province]) {
-    acc[item.province] = [];
-  }
+const provinces = citiesData
+  .sort((a, b) => (a.confirmed < b.confirmed ? 1 : -11))
+  .reduce((acc, item) => {
+    if (!acc[item.province]) {
+      acc[item.province] = [];
+    }
 
-  acc[item.province].push(item);
+    acc[item.province].push(item);
 
-  return acc;
-}, {});
+    return acc;
+  }, {});
 
 const sortedProvinces = Object.keys(provinces)
   .sort()
