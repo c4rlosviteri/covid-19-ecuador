@@ -526,7 +526,7 @@ function Stats({ selectedCity, setSelectedCity, language, setLanguage }) {
         <LastUpdate>
           <span>{i18next.t("lastUpdate", { lng: language })}</span>
           <span>
-            <FaCalendarAlt aria-hidden="true" /> 2020-04-06 - 10:00{" "}
+            <FaCalendarAlt aria-hidden="true" /> 2020-04-07 - 17:00{" "}
             <FaClock aria-hidden="true" />
           </span>
         </LastUpdate>
