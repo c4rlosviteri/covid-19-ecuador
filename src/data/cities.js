@@ -4,21 +4,21 @@ const cities = [
     province: "Guayas",
     id: "guayaquil",
     latlng: [-2.2067, -79.8884],
-    confirmed: 2135
+    confirmed: 2388
   },
   {
     city: "Samborondón",
     province: "Guayas",
     id: "samborondon",
     latlng: [-2.0908, -79.8779],
-    confirmed: 247
+    confirmed: 260
   },
   {
     city: "Quito",
     province: "Pichincha",
     id: "quito",
     latlng: [-0.1893, -78.4813],
-    confirmed: 405
+    confirmed: 458
   },
   {
     city: "Pedro Moncayo",
@@ -39,35 +39,35 @@ const cities = [
     province: "Guayas",
     id: "daule",
     latlng: [-1.8629, -79.978],
-    confirmed: 193
+    confirmed: 199
   },
   {
     city: "Durán",
     province: "Guayas",
     id: "duran",
     latlng: [-2.1701, -79.822],
-    confirmed: 126
+    confirmed: 134
   },
   {
     city: "Milagro",
     province: "Guayas",
     id: "milagro",
     latlng: [-2.1373, -79.5918],
-    confirmed: 165
+    confirmed: 202
   },
   {
     city: "Cuenca",
     province: "Azuay",
     id: "cuenca",
     latlng: [-2.8956, -78.99],
-    confirmed: 95
+    confirmed: 100
   },
   {
     city: "Babahoyo",
     province: "Los Ríos",
     id: "babahoyo",
     latlng: [-1.8003, -79.524],
-    confirmed: 82
+    confirmed: 94
   },
   {
     city: "Baba",
@@ -81,7 +81,7 @@ const cities = [
     province: "Manabí",
     id: "manta",
     latlng: [-0.9703, -80.7042],
-    confirmed: 42
+    confirmed: 46
   },
   {
     city: "Lago Agrio",
@@ -95,28 +95,28 @@ const cities = [
     province: "Los Ríos",
     id: "quevedo",
     latlng: [-1.025, -79.4632],
-    confirmed: 50
+    confirmed: 51
   },
   {
     city: "Portoviejo",
     province: "Manabí",
     id: "protoviejo",
     latlng: [-1.0524, -80.4624],
-    confirmed: 50
+    confirmed: 55
   },
   {
     city: "Azogues",
     province: "Cañar",
     id: "Azogues",
     latlng: [-2.7403, -78.846],
-    confirmed: 15
+    confirmed: 16
   },
   {
     city: "Guaranda",
     province: "Bolívar",
     id: "guaranda",
     latlng: [-1.5908, -78.999],
-    confirmed: 13
+    confirmed: 15
   },
   {
     city: "San Miguel",
@@ -130,42 +130,42 @@ const cities = [
     province: "El Oro",
     id: "santa-rosa",
     latlng: [-3.4573, -79.9647],
-    confirmed: 27
+    confirmed: 30
   },
   {
     city: "Santo Domingo",
     province: "Santo Domingo",
     id: "santo-domingo",
     latlng: [-0.2504, -79.1714],
-    confirmed: 38
+    confirmed: 39
   },
   {
     city: "La Concordia",
     province: "Santo Domingo",
     id: "la-concordia",
     latlng: [0.0062, -79.3921],
-    confirmed: 6
+    confirmed: 7
   },
   {
     city: "Salitre",
     province: "Guayas",
     id: "salitre",
     latlng: [-1.83, -79.8165],
-    confirmed: 34
+    confirmed: 39
   },
   {
     city: "Ibarra",
     province: "Imbabura",
     id: "ibarra",
     latlng: [0.3468, -78.1254],
-    confirmed: 19
+    confirmed: 20
   },
   {
     city: "Machala",
     province: "El Oro",
     id: "machala",
     latlng: [-3.2596, -79.9581],
-    confirmed: 37
+    confirmed: 44
   },
   {
     city: "Colta",
@@ -179,14 +179,14 @@ const cities = [
     province: "Pichincha",
     id: "ruminahui",
     latlng: [-0.3334, -78.4419],
-    confirmed: 19
+    confirmed: 20
   },
   {
     city: "Santa Lucía",
     province: "Guayas",
     id: "santa-lucia",
     latlng: [-1.7146, -79.9841],
-    confirmed: 13
+    confirmed: 14
   },
   {
     city: "Pedro Carbo",
@@ -217,11 +217,18 @@ const cities = [
     confirmed: 21
   },
   {
+    city: "Palestina",
+    province: "Guayas",
+    id: "palestina",
+    latlng: [-1.6260, -79.9787],
+    confirmed: 2
+  },
+  {
     city: "Esmeraldas",
     province: "Esmeraldas",
     id: "esmeraldas",
     latlng: [0.9666, -79.6512],
-    confirmed: 19
+    confirmed: 21
   },
   {
     city: "Quinindé",
@@ -256,35 +263,35 @@ const cities = [
     province: "Loja",
     id: "loja",
     latlng: [-4.0031, -79.2085],
-    confirmed: 25
+    confirmed: 35
   },
   {
     city: "Riobamba",
     province: "Chimborazo",
     id: "riobamba",
     latlng: [-1.67314, -78.6486],
-    confirmed: 30
+    confirmed: 32
   },
   {
     city: "Santa Elena",
     province: "Santa Elena",
     id: "santa-elena",
     latlng: [-2.2273, -80.8596],
-    confirmed: 23
+    confirmed: 25
   },
   {
     city: "La Libertad",
     province: "Santa Elena",
     id: "la-libertad",
     latlng: [-2.2313, -80.9],
-    confirmed: 22
+    confirmed: 26
   },
   {
     city: "Salinas",
     province: "Santa Elena",
     id: "salinas",
     latlng: [-2.2104, -80.9618],
-    confirmed: 10
+    confirmed: 12
   },
   {
     city: "Palora",
@@ -312,7 +319,7 @@ const cities = [
     province: "Azuay",
     id: "santa-isabel",
     latlng: [-3.2755, -79.315],
-    confirmed: 3
+    confirmed: 4
   },
   {
     city: "El Tambo",
@@ -333,7 +340,7 @@ const cities = [
     province: "Tungurahua",
     id: "ambato",
     latlng: [-1.2562, -78.624],
-    confirmed: 21
+    confirmed: 23
   },
   {
     city: "San Pedro de Pelileo",
@@ -354,7 +361,7 @@ const cities = [
     province: "Azuay",
     id: "gualaceo",
     latlng: [-2.8891, -78.7763],
-    confirmed: 3
+    confirmed: 4
   },
   {
     city: "Paute",
@@ -368,7 +375,7 @@ const cities = [
     province: "Azuay",
     id: "sigsig",
     latlng: [-3.0511, -78.7942],
-    confirmed: 1
+    confirmed: 2
   },
   {
     city: "Nabón",
@@ -385,11 +392,18 @@ const cities = [
     confirmed: 1
   },
   {
+    city: "Guachapala",
+    province: "Azuay",
+    id: "guachapala",
+    latlng: [-2.7716, -78.7159],
+    confirmed: 1
+  },
+  {
     city: "La Troncal",
     province: "Cañar",
     id: "la-troncal",
     latlng: [-2.4236, -79.3426],
-    confirmed: 28
+    confirmed: 38
   },
   {
     city: "Suscal",
@@ -417,7 +431,7 @@ const cities = [
     province: "Bolívar",
     id: "echeandia",
     latlng: [-1.4318, -79.2795],
-    confirmed: 2
+    confirmed: 3
   },
   {
     city: "Caluma",
@@ -431,7 +445,7 @@ const cities = [
     province: "Los Ríos",
     id: "vinces",
     latlng: [-1.5598, -79.7529],
-    confirmed: 6
+    confirmed: 7
   },
   {
     city: "Quinsaloma",
@@ -473,21 +487,21 @@ const cities = [
     province: "El Oro",
     id: "atahualpa",
     latlng: [-3.5899, -79.6637],
-    confirmed: 1
+    confirmed: 2
   },
   {
     city: "Pasaje",
     province: "El Oro",
     id: "pasaje",
     latlng: [-3.3297, -79.8055],
-    confirmed: 3
+    confirmed: 4
   },
   {
     city: "El Guabo",
     province: "El Oro",
     id: "el-guabo",
     latlng: [-3.2426, -79.8312],
-    confirmed: 2
+    confirmed: 4
   },
   {
     city: "Las Lajas",
@@ -508,7 +522,7 @@ const cities = [
     province: "El Oro",
     id: "pinas",
     latlng: [-3.6808, -79.6824],
-    confirmed: 2
+    confirmed: 3
   },
   {
     city: "Portovelo",
@@ -539,18 +553,25 @@ const cities = [
     confirmed: 1
   },
   {
+    city: "Pablo Sexto",
+    province: "Morona Santiago",
+    id: "pablo-sexto",
+    latlng: [-1.9284, -78.0261],
+    confirmed: 1
+  },
+  {
     city: "Macará",
     province: "Loja",
     id: "macara",
     latlng: [-4.3772, -79.9419],
-    confirmed: 1
+    confirmed: 2
   },
   {
     city: "Catamayo",
     province: "Loja",
     id: "catamayo",
     latlng: [-3.9877, -79.3564],
-    confirmed: 2
+    confirmed: 6
   },
   {
     city: "Chaguarpamba",
@@ -571,7 +592,7 @@ const cities = [
     province: "Manabí",
     id: "24-de-mayo",
     latlng: [-1.2781, -80.4183],
-    confirmed: 1
+    confirmed: 4
   },
   {
     city: "Bolivar",
@@ -606,21 +627,21 @@ const cities = [
     province: "Guayas",
     id: "balao",
     latlng: [-2.9106, -79.8150],
-    confirmed: 1
+    confirmed: 2
   },
   {
     city: "Naranjal",
     province: "Guayas",
     id: "naranjal",
     latlng: [-2.6746, -79.6171],
-    confirmed: 12
+    confirmed: 17
   },
   {
     city: "El Triunfo",
     province: "Guayas",
     id: "el-triunfo",
     latlng: [-2.3315, -79.4009],
-    confirmed: 8
+    confirmed: 9
   },
   {
     city: "Colimes",
@@ -634,7 +655,7 @@ const cities = [
     province: "Guayas",
     id: "naranjito",
     latlng: [-2.1695, -79.4636],
-    confirmed: 5
+    confirmed: 6
   },
   {
     city: "Lomas de Sargentillo",
@@ -669,7 +690,7 @@ const cities = [
     province: "Los Ríos",
     id: "buena-fe",
     latlng: [-0.8888, -79.4894],
-    confirmed: 7
+    confirmed: 8
   },
   {
     city: "Mocache",
@@ -686,11 +707,18 @@ const cities = [
     confirmed: 5
   },
   {
+    city: "Palenque",
+    province: "Los Ríos",
+    id: "palenque",
+    latlng: [-1.4356, -79.7562],
+    confirmed: 3
+  },
+  {
     city: "Jipijapa",
     province: "Manabí",
     id: "jipijapa",
     latlng: [-1.3518, -80.5823],
-    confirmed: 11
+    confirmed: 12
   },
   {
     city: "Sucre",
@@ -698,6 +726,13 @@ const cities = [
     id: "sucre",
     latlng: [-1.2789, -80.4188],
     confirmed: 1
+  },
+  {
+    city: "Paján",
+    province: "Manabí",
+    id: "pajan",
+    latlng: [-1.5535, -80.4273],
+    confirmed: 2
   },
   {
     city: "Jaramijó",
@@ -711,14 +746,14 @@ const cities = [
     province: "Manabí",
     id: "junin",
     latlng: [-0.9279, -80.2061],
-    confirmed: 1
+    confirmed: 2
   },
   {
     city: "El Carmen",
     province: "Manabí",
     id: "el-carmen",
     latlng: [-0.2722, -79.4638],
-    confirmed: 6
+    confirmed: 7
   },
   {
     city: "Pichincha",
@@ -732,7 +767,14 @@ const cities = [
     province: "Manabí",
     id: "chone",
     latlng: [-0.6982, -80.0947],
-    confirmed: 9
+    confirmed: 14
+  },
+  {
+    city: "Tosagua",
+    province: "Manabí",
+    id: "tosagua",
+    latlng: [-0.7874, -80.2339],
+    confirmed: 1
   },
   {
     city: "Rocafuerte",
@@ -746,7 +788,7 @@ const cities = [
     province: "Manabí",
     id: "santa-ana",
     latlng: [-1.2071, -80.3712],
-    confirmed: 2
+    confirmed: 6
   },
   {
     city: "Chimbo",
@@ -760,14 +802,14 @@ const cities = [
     province: "Guayas",
     id: "balzar",
     latlng: [-1.3641, -79.9023],
-    confirmed: 10
+    confirmed: 11
   },
   {
     city: "Playas",
     province: "Guayas",
     id: "playas",
     latlng: [-2.6326, -80.3893],
-    confirmed: 18
+    confirmed: 21
   },
   {
     city: "Simón Bolivar",
@@ -796,6 +838,13 @@ const cities = [
     id: "Guamote",
     latlng: [-1.9344, -78.7095],
     confirmed: 3
+  },
+  {
+    city: "Alausí",
+    province: "Chimborazo",
+    id: "alausi",
+    latlng: [-2.2021, -78.8461],
+    confirmed: 1
   },
   {
     city: "Chambo",
@@ -865,7 +914,7 @@ const cities = [
     province: "Cotopaxi",
     id: "latacunga",
     latlng: [-0.935, -78.6191],
-    confirmed: 18
+    confirmed: 20
   },
   {
     city: "Santa Cruz",
@@ -886,7 +935,7 @@ const cities = [
     province: "Carchi",
     id: "tulcan",
     latlng: [0.8116, -77.7174],
-    confirmed: 9
+    confirmed: 10
   },
   {
     city: "Montúfar",
@@ -914,6 +963,13 @@ const cities = [
     province: "Imbabura",
     id: "otavalo",
     latlng: [0.2335, -78.2616],
+    confirmed: 2
+  },
+  {
+    city: "Cotacachi",
+    province: "Imbabura",
+    id: "cotacachi",
+    latlng: [0.3002, -78.2667],
     confirmed: 1
   },
   {
@@ -963,7 +1019,7 @@ const cities = [
     province: "Zamora Chinchipe",
     id: "zamora",
     latlng: [-4.0629, -78.9491],
-    confirmed: 1
+    confirmed: 2
   },
   {
     city: "Orellana",
@@ -977,6 +1033,13 @@ const cities = [
     province: "Orellana",
     id: "la-joya-de-los-sachas",
     latlng: [-0.2947, -76.8561],
+    confirmed: 1
+  },
+  {
+    city: "Loreto",
+    province: "Orellana",
+    id: "loreto",
+    latlng: [-0.6916, -77.3098],
     confirmed: 1
   }
 ];
