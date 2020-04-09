@@ -51,6 +51,8 @@ const SelectContainer = styled.div`
   select {
     appearance: none;
     background-color: ${(props) => props.theme.white};
+    border: 1px solid ${(props) => props.theme.lightGray};
+    border-radius: 3px;
     padding: 0.5rem 0.75rem;
 
     :hover {
@@ -482,9 +484,9 @@ function Stats({ selectedCity, setSelectedCity, language, setLanguage }) {
     .map(({ confirmed }) => confirmed)
     .reduce((acc, current) => acc + current);
 
-  const totalRecovered = cases[cases.length - 1][2];
+  const totalRecovered = cases[cases.length - 1][3];
 
-  const totalDeaths = cases[cases.length - 1][1];
+  const totalDeaths = cases[cases.length - 1][2];
 
   const totalActive = totalConfirmed - (totalRecovered + totalDeaths);
 
@@ -565,7 +567,8 @@ function Stats({ selectedCity, setSelectedCity, language, setLanguage }) {
           <GridItem>
             <h2>{i18next.t("suspicious", { lng: language })}</h2>
             <strong>
-              <FaMicroscope aria-hidden="true" size={20} /> {other.suspicious}
+              <FaMicroscope aria-hidden="true" size={20} />{" "}
+              {other.laboratorySamples - other.discarded - totalConfirmed}
             </strong>
           </GridItem>
           <GridItem>

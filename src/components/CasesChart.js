@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import Chart from "chart.js";
 
-import { cases, labels } from "../data/cases";
+import { cases } from "../data/cases";
 import { theme } from "../App";
 import i18next from "../i18next";
 
@@ -29,7 +29,7 @@ function CasesChart({ language }) {
           {
             label: i18next.t("confirmedCases", { lng: language }),
             yAxisID: "B",
-            data: cases.map((item) => item[0]),
+            data: cases.map((item) => item[1]),
             backgroundColor: ["transparent"],
             borderColor: theme.yellow,
             type: "line",
@@ -38,8 +38,8 @@ function CasesChart({ language }) {
             label: i18next.t("dailyConfirmedCases", { lng: language }),
             yAxisID: "A",
             data: cases.map((item, index, array) => {
-              if (index === 0) return item[0];
-              return item[0] - array[index - 1][0];
+              if (index === 0) return item[1];
+              return item[1] - array[index - 1][1];
             }),
             backgroundColor: theme.blue,
           },
@@ -47,13 +47,13 @@ function CasesChart({ language }) {
             label: i18next.t("dailyDeaths", { lng: language }),
             yAxisID: "A",
             data: cases.map((item, index, array) => {
-              if (index === 0) return item[1];
-              return item[1] - array[index - 1][1];
+              if (index === 0) return item[2];
+              return item[2] - array[index - 1][2];
             }),
             backgroundColor: theme.red,
           },
         ],
-        labels,
+        labels: cases.map(item => item[0]),
       },
       options: {
         scales: {
