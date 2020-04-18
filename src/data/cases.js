@@ -47,9 +47,10 @@ export const cases = [
   ["2020-04-15", 7858, 388, 780],
   ["2020-04-16", 8225, 403, 838],
   ["2020-04-17", 8450, 421, 922],
+  ["2020-04-18", 9022, 456, 1008],
 ];
 
 export const other = {
-  discarded: 8075,
-  laboratorySamples: 29596,
+  discarded: 8491,
+  laboratorySamples: 30922,
 };
